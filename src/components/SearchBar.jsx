@@ -9,7 +9,7 @@ function SearchBar() {
   }
 
   return (
-    <div>
+    <div id="search-bar">
       <input onChange={handleChange} id="search-bar" type="text" value={searchValue}/>
     </div>
   )

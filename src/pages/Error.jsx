@@ -2,7 +2,7 @@ import React from 'react'
 
 function Error() {
   return (
-    <div>
+    <div id="error">
 
       <h1>💥 Oops! Algo salió mal. 😅</h1>
       <p>Parece que nuestro servidor se fue de fiesta 🎉 y no ha vuelto aún. Estamos trabajando duro para arreglar esto 🛠️.</p>

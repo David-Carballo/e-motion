@@ -5,16 +5,12 @@ import { Link } from 'react-router-dom'
 function Footer() {
   return (
     
-
-    
-    <div>
+    <div id="footer">
       
-     <Link to={"https://github.com/David-Carballo/e-motion"}>
-     
+     <Link to={"https://github.com/David-Carballo/e-motion"}>     
       GitHub
-      
       </Link>
-      </div>
+    </div>
     
   )
 }

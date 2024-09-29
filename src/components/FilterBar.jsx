@@ -5,7 +5,7 @@ function FilterBar({setFilterCategory}) {
   //Get valores de los inputs y hacer setFilter
 
   return (
-    <div>
+    <div id="filter-bar">
       {/* <input type="range" min="1" max="2"/> */}
 
       <div className='filter-category'>

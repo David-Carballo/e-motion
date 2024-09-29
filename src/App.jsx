@@ -19,8 +19,6 @@ function App() {
 
   return (
     <>
-      <h1>E-motion</h1>   
-
       <NavBar />
 
       <Routes>

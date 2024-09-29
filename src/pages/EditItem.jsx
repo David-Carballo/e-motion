@@ -2,7 +2,9 @@ import React from 'react'
 
 function EditItem() {
   return (
-    <div>EditItem</div>
+    <div id="edit-item">
+      EditItem
+    </div>
   )
 }
 

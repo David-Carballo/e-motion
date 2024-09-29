@@ -1,11 +1,69 @@
+/* * General Styles */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  background-color: rgb(1, 1, 47);
+  min-height: 100svh;
 }
 
 img {
-  width: 200px;
+  width: 100px;
   height: auto;
+}
+
+/* * Pages styles */
+
+#navbar{
+  box-sizing: border-box;
+  max-height: 56px;
+  border: 2px dashed darkgoldenrod;
+}
+#navbar-links{
+  width: 50%;
+}
+
+#footer{
+  max-height: 56px;
+  border: 2px dashed darkgoldenrod;
+}
+
+/* * Flex styles */
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* * Paddings + Margins */
+
+.pd-20{
+  padding: 0px 20px;
+}
+
+
+
+/* ? TABLET */
+@media (min-width: 480px) {
+  #root {
+    background-color: rgb(0, 42, 0);
+    font-size: 0.9rem;
+  }
+}
+
+/* ? Desktop */
+@media (min-width: 1024px) {
+  #root {
+    background-color: rgb(1, 70, 70);
+    font-size: 1.2rem;
+  }
+
+
 }

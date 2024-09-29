@@ -58,7 +58,7 @@ function AddItem() {
   }
 
   return (
-    <div>
+    <div id="add-item">
 
       <form onSubmit={handleFormSubmit}>
 

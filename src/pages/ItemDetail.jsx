@@ -6,8 +6,8 @@ import axios from "axios";
 function ItemDetail() {
   
   const[item, setItem] = useState(null)
-const navigate = useNavigate()
-const params = useParams()
+  const navigate = useNavigate()
+  const params = useParams()
 
 
   useEffect(() =>{
@@ -31,7 +31,7 @@ const params = useParams()
   
   return (
   
-    <div>
+    <div id="item-detail">
 
       <h3> Titulo: {item.title}</h3>
       <p> Duración:{item.length}</p>
