@@ -33,7 +33,7 @@ function Mood() {
         <SearchBar />
         <FilterBar setFilterCategory={setFilterCategory}/>
       </div>
-      <div id="grid">
+      <div id="grid" className='flex-row'>
         {/* Aqui añadir filter segun FilterCategory*/}
         {moodData.items.map((item)=>{
           return (<Card key={item.id} {...item}/>)
