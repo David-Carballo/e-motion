@@ -2,6 +2,8 @@ import axios from 'axios';
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button'
+import axios from 'axios';
 
 function AddItem() {
 
@@ -28,6 +30,7 @@ function AddItem() {
   const handleType = (e) => setType (e.target.value)
 
   const handleFormSubmit = async (event) => {
+  
     event.preventDefault()
     console.log("SUBMIT")
     const newItem = {
@@ -47,7 +50,7 @@ function AddItem() {
       
       const response = await axios.post(`${import.meta.env.VITE_SERVER_URL}/items`,newItem)
 
-      navigate("/")
+      navigate("/moods/:moodId")
 
 
 
@@ -63,7 +66,9 @@ function AddItem() {
     <div id="add-item">
 
       <form onSubmit={handleFormSubmit}>
-
+        
+        <h3>Si desea añadir alguna recomendación, rellene el siguiente formulario</h3>
+        
         <label>Titulo</label>
         <input
         type="text"
@@ -110,7 +115,7 @@ function AddItem() {
         />
 
         <label>¿Para que estado de ánimo?</label>
-        <select onChange={setMoodId} value={moodId} name="mood" id="lang">
+        <select onChange={handleMoodId} value={moodId} name="mood" id="lang1">
             <option value="rage">😡</option>
             <option value="happy">😀</option>
             <option value="sad">😢</option>
@@ -120,15 +125,15 @@ function AddItem() {
         </select>
 
         <label>Tipo de recomendación</label>
-        <select onChange={setType} value={type} name="type" id="lang">
+        <select onChange={handleType} value={type} name="type" id="lang">
             <option value="song">Cancion</option>
             <option value="movie">Pelicula</option>
             <option value="book">Libro</option>
 
             </select>
 
-      <button>Añadir recomendación</button>
-
+      <Button type="submit" variant="outline-success" id= "add-btn">Añadir recomendación</Button>{' '}
+     {/*<button id= "add-btn">Añadir formulario</button>*/}
       </form>
 
 

@@ -1,3 +1,6 @@
+
+
+
 /* * General Styles */
 #root {
   background-color: rgb(1, 1, 47);
@@ -113,7 +116,59 @@ img {
   padding: 0px 20px;
 }
 
+#add-item{
 
+  margin: 100px;
+}
+#add-item h3{
+text-align: center;
+}
+#add-item form{
+
+  display: flex;
+  border: 1px solid white;
+  flex-direction: column;
+  align-items: center;
+  
+  align-content: space-between;
+ 
+  
+}
+#add-item form label {
+
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+}
+
+#add-item form input {
+
+  width: 40vw;
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#add-item form select{
+
+  width: 20vw;
+  height: 5vh;
+  text-align: center;
+  
+  
+}
+
+#lang1{
+  font-size: 3vh;
+}
+
+#add-btn{
+  
+  margin-top: 20px;
+  text-align: center;
+}
 
 /* ? TABLET */
 @media (min-width: 480px) {
@@ -145,6 +200,52 @@ img {
     text-decoration-thickness: 3px;
   }
 
+  #add-item{
+
+    margin: 100px;
+  }
+  
+  #add-item form{
+  
+    display: flex;
+    border: 1px solid white;
+    flex-direction: column;
+    align-items: center;
+    
+    align-content: space-between;
+   
+    
+  }
+  #add-item form label {
+  
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #add-item form input {
+  
+    width: 40vw;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  #add-item form select{
+  
+    width: 20vw;
+    height: 5vh;
+    text-align: center;
+    
+    
+  }
+  
+  #lang1{
+    font-size: 3vh;
+    
+  }
 }
 
 /* ? Desktop */
@@ -175,5 +276,52 @@ img {
     text-decoration: underline;
     text-underline-offset: 10px;
     text-decoration-thickness: 3px;
+  }
+}
+
+  #add-item{
+
+    margin: 100px;
+  }
+  
+  #add-item form{
+  
+    display: flex;
+    border: 1px solid white;
+    flex-direction: column;
+    align-items: center;
+    
+    align-content: space-between;
+   
+    
+  }
+  #add-item form label {
+  
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #add-item form input {
+  
+    width: 40vw;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  #add-item form select{
+  
+    width: 20vw;
+    height: 5vh;
+    text-align: center;
+    
+    
+  }
+  
+  #lang1{
+    font-size: 3vh;
   }
 }

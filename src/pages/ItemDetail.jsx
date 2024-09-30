@@ -2,6 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from "axios";
+import EditItem from './EditItem';
+import Dashboard from './Dashboard';
 
 function ItemDetail() {
   
@@ -32,7 +34,7 @@ function ItemDetail() {
   return (
   
     <div id="item-detail">
-
+      <img src={item.URL} alt="img" />
       <h3> Titulo: {item.title}</h3>
       <p> Duración:{item.length}</p>
       <p>Genero: {item.genre}</p>
@@ -48,9 +50,11 @@ function ItemDetail() {
       <button className= "back-itemdet-btn"onClick={()=>{navigate(-1);}}>Back</button>
       </div>
 
-
+      <EditItem item ={item} setItem= {setItem} />
+     
 
     </div>
+
   )
 }
 

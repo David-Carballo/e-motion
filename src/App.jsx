@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import About from './pages/About'
@@ -14,9 +15,9 @@ import NotFound from './pages/NotFound'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 
-
 function App() {
 
+ 
   return (
     <div id="app">
       <NavBar />
@@ -26,7 +27,7 @@ function App() {
         <Route path={"/about"} element={<About />} />
         <Route path={"/favorites"} element={<Favorites />} />
         <Route path={"/add-item"} element={<AddItem />} />
-        <Route path={"/edit-item/:itemId"} element={<EditItem />} />
+        <Route path={"/edit-item/:itemId"} element={<EditItem   />}/>
 
         <Route path={"/items/:itemId"} element={<ItemDetail />} />
         <Route path={"/moods/:moodId"} element={<Mood />} />
@@ -41,6 +42,9 @@ function App() {
       <Footer />
 
       
+
+     
+        
     </div>
   )
 }
