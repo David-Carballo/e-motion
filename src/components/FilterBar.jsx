@@ -1,19 +1,25 @@
 import React from 'react'
 
-function FilterBar({setFilterCategory}) {
+function FilterBar({filterCategory, setFilterCategory}) {
 
   //Get valores de los inputs y hacer setFilter
+
+  const handleChange = (event) => {
+    let cloneFilter = structuredClone(filterCategory);
+    cloneFilter[event.target.name] = event.target.checked;
+    setFilterCategory(cloneFilter);
+  }
 
   return (
     <div id="filter-bar">
       {/* <input type="range" min="1" max="2"/> */}
 
       <div className='filter-category'>
-        <input type="checkbox" name="films"/>
+        <input onChange={handleChange} type="checkbox" name="films"/>
         <label>Films</label>
-        <input type="checkbox" name="books"/>
+        <input onChange={handleChange} type="checkbox" name="books"/>
         <label>Books</label>
-        <input type="checkbox" name="songs"/>
+        <input onChange={handleChange} type="checkbox" name="songs"/>
         <label>Songs</label>
       </div>
 

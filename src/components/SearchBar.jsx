@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 
-function SearchBar() {
-
-  const [searchValue, setSearchValue] = useState("")
+function SearchBar({searchValue, setSearchValue}) {
 
   const handleChange = (event) => {
     setSearchValue(event.target.value)

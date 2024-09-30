@@ -6,11 +6,13 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
 function Mood() {
+  const {moodId} = useParams();
 
   const [moodData, setMoodData] = useState(null);
-  const [filterCategory, setFilterCategory] = useState({films: false, books: false, songs:false})
 
-  const {moodId} = useParams();
+  //Filter states
+  const [filterCategory, setFilterCategory] = useState({movies: false, books: false, songs:false})
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(()=>{
     getMoodData();
@@ -18,7 +20,7 @@ function Mood() {
 
   const getMoodData = async () => {
     const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/moods/${moodId}?_embed=items`)
-    console.log(response.data);
+    // console.log(response.data);
     setMoodData(response.data);
   }
 
@@ -30,12 +32,22 @@ function Mood() {
         <h1>{moodData.emoji} {moodData.message}</h1>
       </div>
       <div className='filters flex-column'>
-        <SearchBar />
-        <FilterBar setFilterCategory={setFilterCategory}/>
+        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
+        <FilterBar filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>
       </div>
       <div id="grid" className='flex-row'>
         {/* Aqui añadir filter segun FilterCategory*/}
-        {moodData.items.map((item)=>{
+        {moodData.items
+        .filter(item=>item.title.toLowerCase().includes(searchValue.toLowerCase()))
+        .filter(item=>{
+          {console.log(item.type)}
+          if(!filterCategory.books && !filterCategory.songs && !filterCategory.movies) return true;
+          if(filterCategory.books && item.type === "book") return true;
+          if(filterCategory.movies && item.type === "movie") return true;
+          if(filterCategory.songs && item.type === "song") return true;
+          else return false;
+        })
+        .map((item)=>{
           return (<Card key={item.id} {...item}/>)
         })}
         
