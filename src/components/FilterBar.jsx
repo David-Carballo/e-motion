@@ -22,7 +22,6 @@ function FilterBar({filterCategory, setFilterCategory}) {
         <input onChange={handleChange} type="checkbox" name="songs"/>
         <label>Songs</label>
       </div>
-
     </div>
   )
 }

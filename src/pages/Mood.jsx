@@ -24,6 +24,7 @@ function Mood() {
     setMoodData(response.data);
   }
 
+  // Crear un skeleton para mostrar loading
   if(!moodData) return <h1>Loading...</h1>
 
   return (
