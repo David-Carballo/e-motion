@@ -15,8 +15,8 @@ function FilterBar({filterCategory, setFilterCategory}) {
       {/* <input type="range" min="1" max="2"/> */}
 
       <div className='filter-category'>
-        <input onChange={handleChange} type="checkbox" name="films"/>
-        <label>Films</label>
+        <input onChange={handleChange} type="checkbox" name="movies"/>
+        <label>Movies</label>
         <input onChange={handleChange} type="checkbox" name="books"/>
         <label>Books</label>
         <input onChange={handleChange} type="checkbox" name="songs"/>
