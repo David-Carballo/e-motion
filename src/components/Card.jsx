@@ -1,18 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function Card(props){
 
-    const {title, year, genre, URL, length, rating, type, isFavorite} = props
+    const {id, title, year, genre, URL, length, rating, type, isFavorite} = props
 
   //MouseEnter estado en true => display Titulo y Boton Favoritos
   //MouseLeave estado en falso
-
     return(
-        <div id="card">
-            <p>{title}</p>
-            <p>{year}🤩</p>
+        <Link to={`/items/${id}`} id="card">
             <img src={URL} alt="" />
-        </div>
+            <div className='flex-column'>
+                <p>{title}</p>
+                {/* <p>{year}</p> */}
+            </div>
+        </Link>
     );
 }
 

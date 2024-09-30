@@ -26,10 +26,10 @@ function Mood() {
 
   return (
     <div id="mood">
-      <div className='mood-feel'>
-        <h2>{moodData.emoji} {moodData.message}</h2>
+      <div className='mood-feel flex-row'>
+        <h1>{moodData.emoji} {moodData.message}</h1>
       </div>
-      <div className='filters'>
+      <div className='filters flex-column'>
         <SearchBar />
         <FilterBar setFilterCategory={setFilterCategory}/>
       </div>
