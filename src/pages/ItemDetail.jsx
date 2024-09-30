@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from "axios";
+import EditItem from './EditItem';
 
 function ItemDetail() {
   
@@ -48,9 +49,10 @@ function ItemDetail() {
       <button className= "back-itemdet-btn"onClick={()=>{navigate(-1);}}>Back</button>
       </div>
 
-
+      <EditItem item ={item} setItem= {setItem} />
 
     </div>
+
   )
 }
 
