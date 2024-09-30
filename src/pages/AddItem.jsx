@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
@@ -31,7 +32,7 @@ function AddItem() {
   const handleFormSubmit = async (event) => {
   
     event.preventDefault()
-
+    console.log("SUBMIT")
     const newItem = {
       title,
       year,
@@ -55,6 +56,7 @@ function AddItem() {
 
 
     } catch (error) {
+      console.log(error);
       return navigate("/error")
     }
 
