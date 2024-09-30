@@ -37,11 +37,9 @@ function Mood() {
         <FilterBar filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>
       </div>
       <div id="grid" className='flex-row'>
-        {/* Aqui añadir filter segun FilterCategory*/}
         {moodData.items
         .filter(item=>item.title.toLowerCase().includes(searchValue.toLowerCase()))
         .filter(item=>{
-          {console.log(item.type)}
           if(!filterCategory.books && !filterCategory.songs && !filterCategory.movies) return true;
           if(filterCategory.books && item.type === "book") return true;
           if(filterCategory.movies && item.type === "movie") return true;

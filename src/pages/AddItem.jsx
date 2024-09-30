@@ -3,7 +3,6 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button'
-import axios from 'axios';
 
 function AddItem() {
 

@@ -11,7 +11,6 @@ function NavBar() {
             <div id="navbar-links" className='flex-row space-between'>
                 <Link to={"/"}>Home</Link>
                 <Link to={"/favorites"}>♡ Favoritos</Link>
-                <Link to={"/about"}>About</Link>
                 <Link to={"/add-item"}>+ Añadir</Link>
                 <button id="theme-btn">THEME</button>
             </div>
