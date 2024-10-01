@@ -299,11 +299,25 @@ text-align: center;
     font-weight: bold;
   }
 
-  #navbar-links a:focus{
+  #navbar-links a:not(.navbar-add):focus{
     color: var(--primary-color);
     text-decoration: underline;
     text-underline-offset: 10px;
     text-decoration-thickness: 3px;
+  }
+
+  .navbar-add{
+    padding: 0;
+    color: var(--primary-color);
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+  }
+
+  .navbar-add:focus{
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    filter: brightness(1.01);
+    transition: 0.2s;
   }
 
   #add-item{

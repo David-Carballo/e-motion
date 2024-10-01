@@ -17,35 +17,15 @@ import Footer from './components/Footer'
 
 function App() {
 
-  const [themeDark, setThemeDark] = useState("");
-  const [colorTheme, setColorTheme] = useState("");
+  const [colorTheme, setColorTheme] = useState("dark");
 
   const handleColorTheme = (color) => {
-    console.log(color);
-    themeDark? setColorTheme(`${color}-theme-dark`) : setColorTheme(`${color}-theme`)
-  }
-
-  const handleToggleTheme = () => {
-    setThemeDark(!themeDark);
-    // setColorTheme(themeDark && colorTheme? `${colorTheme}-dark` : colorTheme)
-  }
-
-  //debería retornar el nombre de la clase en formato: `{colorTheme}{themeDark}-theme`
-  const handleTheme = () => {
-    console.log("cambia tema", colorTheme, themeDark);
-    if(colorTheme) {
-      console.log("COLOR MOOD", colorTheme);
-      return colorTheme;
-    }
-    else if (!colorTheme && themeDark){
-      return "dark-theme" 
-    }
-    else return "light-theme";
+    setColorTheme(color);
   }
 
   return (
-    <div id="app" className={themeDark? "dark-theme" : "light-theme"}>
-      <NavBar handleToggleTheme={handleToggleTheme}/>
+    <div id="app" className={`${colorTheme}-theme`}>
+      <NavBar />
 
       <Routes>
         <Route path={"/"} element={<Dashboard />} />
