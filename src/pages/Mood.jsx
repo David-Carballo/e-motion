@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
 
-function Mood() {
+function Mood({handleColorTheme}) {
   const {moodId} = useParams();
 
   const [moodData, setMoodData] = useState(null);
@@ -20,14 +20,14 @@ function Mood() {
 
 
   useEffect(()=>{
-    getMoodData();
+    getMoodData();    
   }, [])
 
   const getMoodData = async () => {
     const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/moods/${moodId}?_embed=items`)
-    console.log(response.data.color);
     setMoodData(response.data);
     setMoodColor(response.data.color);
+    handleColorTheme(response.data.color);
   }
 
   // Crear un skeleton para mostrar loading
@@ -36,7 +36,7 @@ function Mood() {
   return (
     <div id="mood">
       <div className='mood-feel flex-row'>
-        <h1 className={`${moodColor}-theme`}>{moodData.emoji} {moodData.message}</h1>
+        <h1>{moodData.emoji} {moodData.message}</h1>
       </div>
       <div className='filters flex-column'>
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
