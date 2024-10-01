@@ -85,7 +85,7 @@ text-align: center;
 
   width: 50vw;
   display: flex;
-  justify-content: center;
+  
 }
 
 #add-item form input {
@@ -144,7 +144,7 @@ text-align: center;
   
     width: 50vw;
     display: flex;
-    justify-content: center;
+    
   }
   
   #add-item form input {
