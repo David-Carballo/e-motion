@@ -19,10 +19,6 @@ function App() {
 
   const [colorTheme, setColorTheme] = useState("dark");
 
-  const handleColorTheme = (color) => {
-    setColorTheme(color);
-  }
-
   return (
     <div id="app" className={`${colorTheme}-theme`}>
       <NavBar />
@@ -35,7 +31,7 @@ function App() {
         <Route path={"/edit-item/:itemId"} element={<EditItem />}/>
 
         <Route path={"/items/:itemId"} element={<ItemDetail />} />
-        <Route path={"/moods/:moodId"} element={<Mood handleColorTheme={handleColorTheme}/>} />
+        <Route path={"/moods/:moodId"} element={<Mood setColorTheme={setColorTheme}/>} />
 
         <Route path={"/error"} element={<Error />} />
 

@@ -39,20 +39,6 @@ function EditItem() {
 
   const handleEditItem = async (event) => {
     event.preventDefault();
-    {
-      /*} const editItem = {
-      title,
-      year,
-      genre,
-      url,
-      length,
-      moodId,
-      rating: null,
-      isFavorite: false,
-      type,
-      
-    */
-    }
 
     try {
       const response = await axios.patch(
@@ -63,8 +49,6 @@ function EditItem() {
     } catch (error) {
     navigate("/error")
     }
-
-    
   };
 
   if(editFormItem === null) return <h1>Loading...</h1>

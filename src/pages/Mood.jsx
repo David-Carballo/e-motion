@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
 
-function Mood({handleColorTheme}) {
+function Mood({setColorTheme}) {
   const {moodId} = useParams();
 
   const [moodData, setMoodData] = useState(null);
@@ -14,9 +14,6 @@ function Mood({handleColorTheme}) {
   //Filter states
   const [filterCategory, setFilterCategory] = useState({movies: false, books: false, songs:false})
   const [searchValue, setSearchValue] = useState("");
-
-  //Color state
-  const [moodColor, setMoodColor] = useState("");
 
 
   useEffect(()=>{
@@ -26,8 +23,7 @@ function Mood({handleColorTheme}) {
   const getMoodData = async () => {
     const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/moods/${moodId}?_embed=items`)
     setMoodData(response.data);
-    setMoodColor(response.data.color);
-    handleColorTheme(response.data.color);
+    setColorTheme(response.data.color);
   }
 
   // Crear un skeleton para mostrar loading
@@ -36,27 +32,29 @@ function Mood({handleColorTheme}) {
   return (
     <div id="mood">
       <div className='mood-feel flex-row'>
-        <h1>{moodData.emoji} {moodData.message}</h1>
+        <h3>{moodData.emoji} {moodData.message}</h3>
       </div>
-      <div className='filters flex-column'>
-        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
-        <FilterBar filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>
-      </div>
-      <div id="grid" className='flex-row'>
-        
-        {moodData.items
-        .filter(item=>item.title.toLowerCase().includes(searchValue.toLowerCase()))
-        .filter(item=>{
-          if(!filterCategory.books && !filterCategory.songs && !filterCategory.movies) return true;
-          if(filterCategory.books && item.type === "book") return true;
-          if(filterCategory.movies && item.type === "movie") return true;
-          if(filterCategory.songs && item.type === "song") return true;
-          else return false;
-        })
-        .map((item)=>{
-          return (<Card key={item.id} {...item}/>)
-        })}
-        
+      <div className='container'>
+        <div className='filters flex-column'>
+          <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
+          <FilterBar filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>
+        </div>
+        <div id="grid" className='flex-row'>
+          
+          {moodData.items
+          .filter(item=>item.title.toLowerCase().includes(searchValue.toLowerCase()))
+          .filter(item=>{
+            if(!filterCategory.books && !filterCategory.songs && !filterCategory.movies) return true;
+            if(filterCategory.books && item.type === "book") return true;
+            if(filterCategory.movies && item.type === "movie") return true;
+            if(filterCategory.songs && item.type === "song") return true;
+            else return false;
+          })
+          .map((item)=>{
+            return (<Card key={item.id} {...item}/>)
+          })}
+          
+        </div>
       </div>
 
     </div>

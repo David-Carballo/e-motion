@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import logo from "/src/assets/logo.png"
 import menuIcon from "/src/assets/menu-icon.png"
 import Brand from "/src/assets/logo-emotion.png"
 
@@ -13,7 +12,6 @@ function NavBar() {
                 <Link to={"/"}>Home</Link>
                 <Link to={"/favorites"}>♡ Favoritos</Link>
                 <Link to={"/add-item"} className='navbar-add'>+ Añadir</Link>
-                {/* <button onClick={handleToggleTheme} id="theme-btn">THEME</button> */}
             </div>
         </div>
     );

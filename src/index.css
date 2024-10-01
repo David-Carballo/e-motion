@@ -124,16 +124,17 @@ input[type=text]:focus{
   background-color: var(--primary-color);
 }
 
-/* Colores
+input[type=checkbox]{
+  appearance: none;
+  border-radius: 5px;
+  /* border: 2px solid var(--background-color); */
+  width: 15px;
+  height: 15px;
+  transition: 0.3s ease-in-out;
+}
 
-background-dark   ->  #161616
-background-light  ->  #e7e7e7
-texto-dark        ->  white
-texto-light       ->  black
-yellow            ->  #ffde34
-red               ->  #b50000
-darkblue          ->  #2a3b90
-darkpurple        ->  #49003b
-pink              ->  #ffa5ec
-
-*/
+input[type=checkbox]:checked{
+  border: 2px solid var(--primary-color);
+  background-color: var(--shadow-accent); 
+  transition: 0.3s ease-in-out;
+}

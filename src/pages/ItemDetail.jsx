@@ -4,8 +4,6 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from "axios";
 import { Image } from 'antd'
 import {Popconfirm } from 'antd'
-import { Alert } from 'antd'
-import { Link } from 'react-router-dom';
 
 function ItemDetail() {
   
