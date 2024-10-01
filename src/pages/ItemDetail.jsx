@@ -31,7 +31,7 @@ const success = () => {
     try {
 
       let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/items/${params.itemId}`)
-      console.log(response)
+      // console.log(response)
       setItem(response.data)
       
     } catch (error) {

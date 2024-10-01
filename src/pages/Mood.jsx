@@ -5,7 +5,8 @@ import Card from '../components/Card'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
-function Mood() {
+
+function Mood({handleColorTheme}) {
   const {moodId} = useParams();
 
   const [moodData, setMoodData] = useState(null);
@@ -14,14 +15,19 @@ function Mood() {
   const [filterCategory, setFilterCategory] = useState({movies: false, books: false, songs:false})
   const [searchValue, setSearchValue] = useState("");
 
+  //Color state
+  const [moodColor, setMoodColor] = useState("");
+
+
   useEffect(()=>{
-    getMoodData();
+    getMoodData();    
   }, [])
 
   const getMoodData = async () => {
     const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/moods/${moodId}?_embed=items`)
-    // console.log(response.data);
     setMoodData(response.data);
+    setMoodColor(response.data.color);
+    handleColorTheme(response.data.color);
   }
 
   // Crear un skeleton para mostrar loading
@@ -37,11 +43,10 @@ function Mood() {
         <FilterBar filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>
       </div>
       <div id="grid" className='flex-row'>
-        {/* Aqui añadir filter segun FilterCategory*/}
+        
         {moodData.items
         .filter(item=>item.title.toLowerCase().includes(searchValue.toLowerCase()))
         .filter(item=>{
-          {console.log(item.type)}
           if(!filterCategory.books && !filterCategory.songs && !filterCategory.movies) return true;
           if(filterCategory.books && item.type === "book") return true;
           if(filterCategory.movies && item.type === "movie") return true;

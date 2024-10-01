@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
@@ -17,20 +17,45 @@ import Footer from './components/Footer'
 
 function App() {
 
- 
+  const [themeDark, setThemeDark] = useState("");
+  const [colorTheme, setColorTheme] = useState("");
+
+  const handleColorTheme = (color) => {
+    console.log(color);
+    themeDark? setColorTheme(`${color}-theme-dark`) : setColorTheme(`${color}-theme`)
+  }
+
+  const handleToggleTheme = () => {
+    setThemeDark(!themeDark);
+    // setColorTheme(themeDark && colorTheme? `${colorTheme}-dark` : colorTheme)
+  }
+
+  //debería retornar el nombre de la clase en formato: `{colorTheme}{themeDark}-theme`
+  const handleTheme = () => {
+    console.log("cambia tema", colorTheme, themeDark);
+    if(colorTheme) {
+      console.log("COLOR MOOD", colorTheme);
+      return colorTheme;
+    }
+    else if (!colorTheme && themeDark){
+      return "dark-theme" 
+    }
+    else return "light-theme";
+  }
+
   return (
-    <div id="app">
-      <NavBar />
+    <div id="app" className={themeDark? "dark-theme" : "light-theme"}>
+      <NavBar handleToggleTheme={handleToggleTheme}/>
 
       <Routes>
         <Route path={"/"} element={<Dashboard />} />
         <Route path={"/about"} element={<About />} />
         <Route path={"/favorites"} element={<Favorites />} />
         <Route path={"/add-item"} element={<AddItem />} />
-        <Route path={"/edit-item/:itemId"} element={<EditItem   />}/>
+        <Route path={"/edit-item/:itemId"} element={<EditItem />}/>
 
         <Route path={"/items/:itemId"} element={<ItemDetail />} />
-        <Route path={"/moods/:moodId"} element={<Mood />} />
+        <Route path={"/moods/:moodId"} element={<Mood handleColorTheme={handleColorTheme}/>} />
 
         <Route path={"/error"} element={<Error />} />
 

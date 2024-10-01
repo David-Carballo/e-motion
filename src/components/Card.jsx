@@ -10,6 +10,7 @@ function Card(props){
     return(
         <Link to={`/items/${id}`} id="card">
             <img src={URL} alt="" />
+            <span></span>
             <div className='flex-column'>
                 <p>{title}</p>
                 {/* <p>{year}</p> */}

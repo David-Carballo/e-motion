@@ -26,7 +26,7 @@ function Dashboard() {
 const getData = async () => {
   try {
     let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/items`)
-    console.log(response)
+    // console.log(response)
     setItems(response.data)
   } catch (error) {
     navigate("/error")
