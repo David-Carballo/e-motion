@@ -7,6 +7,7 @@ function Dashboard() {
   const navigate = useNavigate()
   const [items, setItems] = useState(null)
   
+  
   const contentStyle = {
     height: '160px',
     color: '#fff',
@@ -28,6 +29,8 @@ const getData = async () => {
     navigate("/error")
   }
 }
+
+
 if (items === null){
   return <div>...Loading</div>
 }
@@ -43,25 +46,49 @@ if (items === null){
         <Link to="/moods/sad">😢</Link>
         <Link to="/moods/rage">😡</Link>
       </div>
-      
+      <div>
+        <h2>Recomendaciones</h2>
       <Carousel autoplay>
     <div>
-      <img src={items[Math.floor(Math.random() * items.length)].URL} alt={items.type} />
+      
+      <img src={items[Math.floor(Math.random() * items.length)].URL} alt={items.type} style = {{height:"400px", width:"300px"}} />
      
     </div>
     <div>
-    <img src={items[Math.floor(Math.random() * items.length)].URL} alt={items.type}  />
+    <img src={items[Math.floor(Math.random() * items.length)].URL} alt={items.type} style = {{height:"400px", width:"300px"}} />
     
     </div>
     <div>
-    <img src={items[Math.floor(Math.random() * items.length)].URL} alt={items.type}  />
+    <img src={items[Math.floor(Math.random() * items.length)].URL} alt={items.type} style = {{height:"400px", width:"300px"}} />
     
     </div>
     <div>
-    <img src={items[Math.floor(Math.random() * items.length)].URL} alt={items.type}  />
+    <img src={items[Math.floor(Math.random() * items.length)].URL} alt={items.type} style = {{height:"400px", width:"300px"}} />
     
     </div>
   </Carousel>
+    </div>
+    <div>
+      <h2>Recomendaciones añadidas recientemente</h2>
+    <Carousel autoplay>
+    <div>
+      <img src={items[items.length-1].URL} alt={items.type} style = {{height:"400px", width:"300px"}} />
+     
+    </div>
+    <div>
+    <img src={items[items.length-2].URL} alt={items.type} style = {{height:"400px", width:"300px"}} />
+    
+    </div>
+    <div>
+    <img src={items[items.length-3].URL} alt={items.type} style = {{height:"400px", width:"300px"}} />
+    
+    </div>
+    <div>
+    <img src={items[items.length-4].URL} alt={items.type} style = {{height:"400px", width:"300px"}}  />
+    
+    </div>
+  </Carousel>
+    </div>
     </div>
   )
 }

@@ -4,7 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from "axios";
 import EditItem from './EditItem';
 import { Image } from 'antd'
-
+import {Popconfirm } from 'antd'
+import { Alert } from 'antd'
 
 
 function ItemDetail() {
@@ -13,6 +14,13 @@ function ItemDetail() {
   const navigate = useNavigate()
   const params = useParams()
 
+ 
+const success = () => {
+    messageApi.open({
+      type: 'success',
+      content: "Recomendación eliminada",
+    });
+  }
 
   useEffect(() =>{
     getData()
@@ -25,6 +33,22 @@ function ItemDetail() {
       let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/items/${params.itemId}`)
       console.log(response)
       setItem(response.data)
+      
+    } catch (error) {
+      navigate("/error")
+    }
+  }
+
+  const handleDelete = async () =>{
+    try {
+      let response = await axios.delete(`${import.meta.env.VITE_SERVER_URL}/items/${params.itemId}`)
+    
+      setTimeout(() =>{
+        
+      navigate(-1)
+      },500)
+
+      
       
     } catch (error) {
       navigate("/error")
@@ -62,7 +86,14 @@ function ItemDetail() {
       <div>
 
       <button>Edit</button>
-      <button>Delete</button>
+      <Popconfirm
+    title="Delete the task"
+    description="Are you sure to delete this task?"
+    okText="Yes" onConfirm={handleDelete}
+    cancelText="No" onCancel={null}
+  >
+    <button>Delete</button>
+  </Popconfirm>
       <button className= "back-itemdet-btn"onClick={()=>{navigate(-1);}}>Back</button>
       </div>
 

@@ -133,16 +133,11 @@ text-align: center;
  
   
 }
-#add-item form label {
 
-  width: 50vw;
- 
-  
-}
 
 #add-item form input {
 
-  width: 40vw;
+  
   height: 3vh;
   display: flex;
   
@@ -169,17 +164,18 @@ text-align: center;
 }
 
 #stack{
-  width: 10vw;
+  border: 1px solid whitesmoke;
+  display: flex;
 }
 
-.MuiRating-decimal {
+/*.MuiRating-decimal {
   width: 20% !important; 
 }
 
 .MuiRating-root {
   width: 100% !important;
 }
-
+*/
 
 /* ? TABLET */
 @media (min-width: 480px) {
@@ -227,16 +223,11 @@ text-align: center;
    
     
   }
-  #add-item form label {
-  
-    width: 50vw;
-    display: flex;
-    justify-content: center;
-  }
+
   
   #add-item form input {
   
-    width: 40vw;
+    
     height: 3vh;
     display: flex;
     justify-content: center;
@@ -304,16 +295,11 @@ text-align: center;
    
     
   }
-  #add-item form label {
-  
-    width: 50vw;
-    display: flex;
-    justify-content: center;
-  }
+
   
   #add-item form input {
   
-    width: 40vw;
+  
     height: 3vh;
     display: flex;
     justify-content: center;
