@@ -3,6 +3,9 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button'
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
+
 
 function AddItem() {
 
@@ -39,7 +42,7 @@ function AddItem() {
       url,
       length,
       moodId,
-      rating: null,
+      rating,
       isFavorite: false,
       type,
 
@@ -49,7 +52,7 @@ function AddItem() {
       
       const response = await axios.post(`${import.meta.env.VITE_SERVER_URL}/items`,newItem)
 
-      navigate("/moods/:moodId")
+      navigate(`/moods/${moodId}`)
 
 
 
@@ -131,6 +134,17 @@ function AddItem() {
 
             </select>
 
+            <label>Valoración</label>
+            <div id="stack">
+            
+            <Rating
+        name="simple-controlled"
+        value={rating}
+        onChange={(event, newValue) => {
+          setRating(newValue);
+        }}
+      />
+    </div>
       <Button type="submit" variant="outline-success" id= "add-btn">Añadir recomendación</Button>{' '}
      {/*<button id= "add-btn">Añadir formulario</button>*/}
       </form>

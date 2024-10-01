@@ -120,8 +120,8 @@ function EditItem(props) {
       </form>
       {showAlert ? (
         <Alert
-          message="Success Tips"
-          description="Detailed description and advice about successful copywriting."
+          message="Modificación realizada"
+          description="Los datos modificados han sido registrados con éxito"
           type="success"
           showIcon
         />

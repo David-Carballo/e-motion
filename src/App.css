@@ -156,17 +156,9 @@ img {
   padding: 0px 20px;
 }
 
-.gap-2{
-  gap: 2rem;
-}
-
-.gap-10{
-  gap: 10rem;
-}
-
 #add-item{
 
-  margin: 100px;
+  margin: 50px;
 }
 
 #add-item h3{
@@ -178,33 +170,28 @@ text-align: center;
   display: flex;
   border: 1px solid white;
   flex-direction: column;
-  align-items: center;
+ 
   
   align-content: space-between;
+ 
   
 }
-#add-item form label {
 
-  width: 50vw;
-  display: flex;
-  justify-content: center;
-}
 
 #add-item form input {
 
-  width: 40vw;
+  
   height: 3vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  
+  
 }
 
 #add-item form select{
 
   width: 20vw;
   height: 5vh;
-  text-align: center;
+  
   
   
 }
@@ -217,6 +204,42 @@ text-align: center;
   
   margin-top: 20px;
   text-align: center;
+}
+
+#stack{
+  border: 1px solid whitesmoke;
+  display: flex;
+}
+
+/*.MuiRating-decimal {
+  width: 20% !important; 
+}
+
+.MuiRating-root {
+  width: 100% !important;
+}
+*/
+
+#error{
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+#not-found{
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.carousel img{ 
+  display: flex;
+  align-items: center;
+  
 }
 
 /* ? TABLET */
@@ -269,16 +292,10 @@ text-align: center;
    
     
   }
-  #add-item form label {
-  
-    width: 50vw;
-    display: flex;
-    justify-content: center;
-  }
   
   #add-item form input {
   
-    width: 40vw;
+    
     height: 3vh;
     display: flex;
     justify-content: center;
@@ -343,21 +360,14 @@ text-align: center;
     border: 1px solid white;
     flex-direction: column;
     align-items: center;
-    
-    align-content: space-between;
    
     
   }
-  #add-item form label {
-  
-    width: 50vw;
-    display: flex;
-    justify-content: center;
-  }
+
   
   #add-item form input {
   
-    width: 40vw;
+  
     height: 3vh;
     display: flex;
     justify-content: center;
