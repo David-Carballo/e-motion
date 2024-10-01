@@ -2,11 +2,10 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from "axios";
-import EditItem from './EditItem';
 import { Image } from 'antd'
 import {Popconfirm } from 'antd'
 import { Alert } from 'antd'
-
+import { Link } from 'react-router-dom';
 
 function ItemDetail() {
   
@@ -75,17 +74,23 @@ const success = () => {
             toolbarRender: () => null,
           }}
         />
-      <h3> Titulo: {item.title}</h3>
+       
+        <h3> Titulo: {item.title}</h3>
       <p> Duración:{item.length}</p>
       <p>Genero: {item.genre}</p>
       <p>Año: {item.year}</p>
       <p>Valoración: {item.rating}</p>
+        
+      
       <button> Añadir a favoritos </button>
 
       
       <div>
-
+      <Link to={`/edit-item/${item.id}`}>
       <button>Edit</button>
+      </Link>
+      
+
       <Popconfirm
     title="Delete the task"
     description="Are you sure to delete this task?"
@@ -97,7 +102,7 @@ const success = () => {
       <button className= "back-itemdet-btn"onClick={()=>{navigate(-1);}}>Back</button>
       </div>
 
-      <EditItem item ={item} setItem= {setItem} />
+    
      
 
     </div>
