@@ -134,13 +134,7 @@ text-align: center;
   
 }
 
-<<<<<<< HEAD
-  width: 50vw;
-  display: flex;
-  
-}
-=======
->>>>>>> rama_Pedro
+
 
 #add-item form input {
 
@@ -175,14 +169,7 @@ text-align: center;
   display: flex;
 }
 
-/*.MuiRating-decimal {
-  width: 20% !important; 
-}
 
-.MuiRating-root {
-  width: 100% !important;
-}
-*/
 
 #error{
   border: 1px solid white;
@@ -200,11 +187,7 @@ text-align: center;
   color: white;
 }
 
-.carousel img{ 
-  display: flex;
-  align-items: center;
-  
-}
+
 
 /* ? TABLET */
 @media (min-width: 480px) {
@@ -252,16 +235,7 @@ text-align: center;
    
     
   }
-<<<<<<< HEAD
-  #add-item form label {
-  
-    width: 50vw;
-    display: flex;
-    
-  }
-=======
 
->>>>>>> rama_Pedro
   
   #add-item form input {
   

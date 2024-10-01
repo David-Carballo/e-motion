@@ -80,6 +80,7 @@ const success = () => {
       <p>Genero: {item.genre}</p>
       <p>Año: {item.year}</p>
       <p>Valoración: {item.rating}</p>
+
       <button> Añadir a favoritos </button>
 
       
