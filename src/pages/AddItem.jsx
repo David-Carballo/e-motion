@@ -3,7 +3,9 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button'
-import axios from 'axios';
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
+
 
 function AddItem() {
 
@@ -132,6 +134,12 @@ function AddItem() {
 
             </select>
 
+            <label>Valoración</label>
+            <div id="stack">
+            
+      <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+    
+    </div>
       <Button type="submit" variant="outline-success" id= "add-btn">Añadir recomendación</Button>{' '}
      {/*<button id= "add-btn">Añadir formulario</button>*/}
       </form>

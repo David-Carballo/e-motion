@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from "axios";
 import EditItem from './EditItem';
-import Dashboard from './Dashboard';
+import { Image } from 'antd'
+
+
 
 function ItemDetail() {
   
@@ -34,7 +36,21 @@ function ItemDetail() {
   return (
   
     <div id="item-detail">
-      <img src={item.URL} alt="img" />
+      <Image
+          width={200}
+          src={item.URL}
+          preview={{
+            destroyOnClose: true,
+            imageRender: () => (
+              <img
+                style={{height:"90%", width:"auto"}}
+                controls
+                src={item.URL}
+              />
+            ),
+            toolbarRender: () => null,
+          }}
+        />
       <h3> Titulo: {item.title}</h3>
       <p> Duración:{item.length}</p>
       <p>Genero: {item.genre}</p>
