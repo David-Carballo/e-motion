@@ -5,6 +5,7 @@ import Card from '../components/Card'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
+
 function Mood() {
   const {moodId} = useParams();
 
@@ -14,14 +15,19 @@ function Mood() {
   const [filterCategory, setFilterCategory] = useState({movies: false, books: false, songs:false})
   const [searchValue, setSearchValue] = useState("");
 
+  //Color state
+  const [moodColor, setMoodColor] = useState("");
+
+
   useEffect(()=>{
     getMoodData();
   }, [])
 
   const getMoodData = async () => {
     const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/moods/${moodId}?_embed=items`)
-    // console.log(response.data);
+    console.log(response.data.color);
     setMoodData(response.data);
+    setMoodColor(response.data.color);
   }
 
   // Crear un skeleton para mostrar loading
@@ -30,13 +36,14 @@ function Mood() {
   return (
     <div id="mood">
       <div className='mood-feel flex-row'>
-        <h1>{moodData.emoji} {moodData.message}</h1>
+        <h1 className={`${moodColor}-theme`}>{moodData.emoji} {moodData.message}</h1>
       </div>
       <div className='filters flex-column'>
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
         <FilterBar filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>
       </div>
       <div id="grid" className='flex-row'>
+        
         {moodData.items
         .filter(item=>item.title.toLowerCase().includes(searchValue.toLowerCase()))
         .filter(item=>{

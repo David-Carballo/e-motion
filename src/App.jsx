@@ -17,17 +17,22 @@ import Footer from './components/Footer'
 
 function App() {
 
- 
+  const [themeDark, setThemeDark] = useState(false);
+
+  const handleToggleTheme = () => {
+    setThemeDark(!themeDark);
+  }
+
   return (
-    <div id="app">
-      <NavBar />
+    <div id="app" className={themeDark? "dark-theme" : "light-theme"}>
+      <NavBar handleToggleTheme={handleToggleTheme}/>
 
       <Routes>
         <Route path={"/"} element={<Dashboard />} />
         <Route path={"/about"} element={<About />} />
         <Route path={"/favorites"} element={<Favorites />} />
         <Route path={"/add-item"} element={<AddItem />} />
-        <Route path={"/edit-item/:itemId"} element={<EditItem   />}/>
+        <Route path={"/edit-item/:itemId"} element={<EditItem />}/>
 
         <Route path={"/items/:itemId"} element={<ItemDetail />} />
         <Route path={"/moods/:moodId"} element={<Mood />} />

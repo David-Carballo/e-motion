@@ -1,9 +1,5 @@
-
-
-
 /* * General Styles */
 #root {
-  background-color: rgb(1, 1, 47);
   min-height: 100svh;
   font-size: 0.8rem;
 }
@@ -65,7 +61,7 @@ img {
 }
 
 #card:hover{
-  transform: scale(1.1);
+  transform: scale(1.08);
   transition: 0.2s;
 }
 
@@ -77,17 +73,19 @@ img {
   overflow: hidden;
   border-radius: 10px;
   /* border: 2px solid transparent; */
-  box-shadow: 2px 2px 10px 2px rgba(16,16,16, 0.6);
+  box-shadow: 2px 2px 20px 5px var(--shadow);
 }
 
 
 #card img:hover{
   filter: brightness(1);
+  border: 2px solid var(--primary-color);
+  box-shadow: 2px 2px 20px 1px var(--shadow-accent);
 }
 
 #card > div {
   position: absolute;
-  background-color: rgba(16,16,16, 0.6);
+  background-color: var(--shadow-dark);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   left: 0;
@@ -123,7 +121,7 @@ img {
   padding: 3rem;
   align-self: center;
   /* border: 2px solid rgba(255, 255, 255, 0.2); */
-  background-color: rgba(255, 255, 255, 0.2);;
+  background-color: var(--shadow);
   width: 80vw;
   height: 20rem;
   border-radius: 10px;
@@ -224,7 +222,6 @@ text-align: center;
 /* ? TABLET */
 @media (min-width: 480px) {
   #root {
-    background-color: rgb(0, 42, 0);
     font-size: 0.9rem;
   }
 
@@ -245,13 +242,12 @@ text-align: center;
 
   #navbar-links a{
     padding: 0 2rem;
-    color: white;
     text-decoration: none;
     font-weight: bold;
   }
 
   #navbar-links a:focus{
-    color: #ffde34;
+    color: var(--primary-color);
     text-decoration: underline;
     text-underline-offset: 10px;
     text-decoration-thickness: 3px;
@@ -308,7 +304,6 @@ text-align: center;
 /* ? Desktop */
 @media (min-width: 1024px) {
   #root {
-    background-color: rgb(1, 70, 70);
     font-size: 1.2rem;
   }
 
@@ -333,16 +328,8 @@ text-align: center;
 
   #navbar-links a{
     padding: 0 2rem;
-    color: white;
     text-decoration: none;
     font-weight: bold;
-  }
-
-  #navbar-links a:focus{
-    color: #ffde34;
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    text-decoration-thickness: 3px;
   }
 
   #add-item{
