@@ -5,7 +5,7 @@ import axios from "axios";
 import { Image } from 'antd'
 import {Popconfirm } from 'antd'
 import { Alert } from 'antd'
-
+import { Link } from 'react-router-dom';
 
 function ItemDetail() {
   
@@ -76,6 +76,7 @@ function ItemDetail() {
             ),
             toolbarRender: () => null
           }}
+
       />
       <h3>Titulo: {item.title}</h3>
       <p>Duración:{item.length}</p>
@@ -93,7 +94,6 @@ function ItemDetail() {
         </Popconfirm>
         <button className= "back-itemdet-btn"onClick={()=>{navigate(-1);}}>Back</button>
       </div>
-
     </div>
 
   )

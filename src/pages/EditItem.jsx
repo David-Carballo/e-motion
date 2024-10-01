@@ -1,17 +1,35 @@
 import { useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import React from "react";
 import { Alert } from "antd";
+import { useEffect } from "react";
 
-function EditItem(props) {
-  const { item, setItem } = props;
-  const [editFormItem, setEditFormItem] = useState(item);
+function EditItem() {
+  
+  const [editFormItem, setEditFormItem] = useState(null);
   const params = useParams();
   const [showAlert, setShowAlert] = useState(false);
+ const navigate = useNavigate()
 
+
+  useEffect(() =>{
+
+    getData()
+
+  },[])
+
+  const getData= async () => {
+    try {
+      let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/items/${params.itemId}`)
+      setEditFormItem(response.data)
+      
+    } catch (error) {
+      navigate("/error")
+    }
+
+  }
   const handleChange = (event) => {
     const itemClone = structuredClone(editFormItem);
     itemClone[event.target.name] = event.target.value;
@@ -45,8 +63,12 @@ function EditItem(props) {
     } catch (error) {
     navigate("/error")
     }
+
+    
   };
 
+  if(editFormItem === null) return <h1>Loading...</h1>
+  
   return (
     <div id="edit-item">
       <form onSubmit={handleEditItem}>
