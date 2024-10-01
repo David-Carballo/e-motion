@@ -4,7 +4,7 @@ import { Carousel } from 'antd';
 import axios from 'axios';
 import { width } from '@mui/system';
 
-function Dashboard() {
+function Dashboard({handleToggleTheme}) {
   const navigate = useNavigate()
   const [items, setItems] = useState(null)
   
