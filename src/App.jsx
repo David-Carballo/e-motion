@@ -30,6 +30,7 @@ function App() {
     // setColorTheme(themeDark && colorTheme? `${colorTheme}-dark` : colorTheme)
   }
 
+  //debería retornar el nombre de la clase en formato: `{colorTheme}{themeDark}-theme`
   const handleTheme = () => {
     console.log("cambia tema", colorTheme, themeDark);
     if(colorTheme) {
