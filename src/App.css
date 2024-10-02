@@ -262,12 +262,9 @@ background-size: cover;
   
 }
 
-
-
-#item-description iframe{
-  width: 30vw;
-  height: 30vh;
- 
+iframe{
+  height: 90%;
+  width: 90%;
 }
 
 /* ? TABLET */

@@ -17,6 +17,7 @@
     position: absolute;
     top: 5px;
     left: 5px;
+    cursor:cell;
 }
 
 #item-image{
@@ -42,7 +43,7 @@
 
 .MuiButton-colorPrimary{
     background-color: var(--primary-color) !important;
-    color: black !important;
+    color: var(--shadow-dark) !important;
     border-radius: 10px !important;
 }
 
@@ -84,7 +85,6 @@
         align-items: center;
         gap: 10rem;
     }
-
 
     #item-description{
         height: 30rem;

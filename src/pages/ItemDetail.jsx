@@ -6,7 +6,7 @@ import axios from "axios";
 import { Image } from "antd";
 import { Popconfirm } from "antd";
 import { PacmanLoader } from "react-spinners";
-import favLogo from "/src/assets/fav.png";
+import favLogo from "/src/assets/fav2.png";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Rating from "@mui/material/Rating";
@@ -63,16 +63,16 @@ function ItemDetail() {
   if (item === null) return <PacmanLoader color="#eeec0b" className="pacman" />;
 
   return (
-    <>
+    <div>
       <div id="item-detail">
         <div id="item-image">
           <Image style={{height: "30rem"}} src={item.URL} preview={{
                 destroyOnClose: true,
                 imageRender: () => (
-                  <img
-                    style={{height:"90%", width:"auto"}}
+                  <iframe
+                    src= {item.youtube}
                     controls
-                    src={item.URL}
+                    playsInline
                   />
                 ),
                 toolbarRender: () => null
@@ -103,12 +103,8 @@ function ItemDetail() {
           </ButtonGroup>
         </div>
       </div>
-      <iframe
-      src= {item.youtube}
-      controls
-      playsInline
-    />
-    </>
+      
+    </div>
   );
 }
 
