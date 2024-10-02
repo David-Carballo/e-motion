@@ -1,5 +1,8 @@
+import '../styles/Card.css'
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Rating from '@mui/material/Rating';
+
 
 function Card(props){
 
@@ -10,10 +13,13 @@ function Card(props){
     return(
         <Link to={`/items/${id}`} id="card">
             <img src={URL} alt="" />
-            <span></span>
             <div className='flex-column'>
                 <p>{title}</p>
-                {/* <p>{year}</p> */}
+                <Rating
+                    name="read-only"
+                    value={rating}
+                    readOnly
+                />
             </div>
         </Link>
     );
