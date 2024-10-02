@@ -1,3 +1,4 @@
+import '../styles/ItemDetail.css'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
@@ -8,6 +9,7 @@ import { PacmanLoader } from 'react-spinners';
 import favLogo from "/src/assets/fav.png"
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import Rating from '@mui/material/Rating';
 
 
 function ItemDetail() {
@@ -15,13 +17,6 @@ function ItemDetail() {
   const[item, setItem] = useState(null)
   const navigate = useNavigate()
   const params = useParams()
- 
-  const success = () => {
-    messageApi.open({
-      type: 'success',
-      content: "Recomendación eliminada",
-    });
-  }
 
   useEffect(() =>{
     getData()
@@ -64,19 +59,18 @@ function ItemDetail() {
   if(item === null) return <PacmanLoader color="#eeec0b" className="pacman"/>
   
   return (
-  
     <div id="item-detail">
-      
-      <Image width={200} src={item.URL} preview={{
-            destroyOnClose: true,
-            imageRender: () => (
-              <img
-                style={{height:"90%", width:"auto"}}
-                controls
-                src={item.URL}
-              />
-            ),
-            toolbarRender: () => null
+      <div id="item-image">
+        <Image style={{height: "30rem"}} src={item.URL} preview={{
+              destroyOnClose: true,
+              imageRender: () => (
+                <img
+                  style={{height:"90%", width:"auto"}}
+                  controls
+                  src={item.URL}
+                />
+              ),
+              toolbarRender: () => null
           }}
 
       />
@@ -109,6 +103,29 @@ function ItemDetail() {
           <Button>Delete</Button>
         </Popconfirm>
         <Button className= "back-itemdet-btn"onClick={()=>{navigate(-1);}}>Back</Button>
+        </ButtonGroup>
+        <img src={favLogo} onClick={handleIsFavorite} className={`${item.isFavorite ? "img-fav" : "img-nofav"} item-fav`} style={{width:"50px"}}/>
+      </div>
+      <div id="item-description">
+        <h3>{item.title}</h3>
+        <div>
+          <p><strong>Duración:</strong> {item.length}</p>
+          <p><strong>Género:</strong> {item.genre}</p>
+          <p><strong>Año:</strong> {item.year}</p>
+          <p><strong>Valoración:</strong></p>
+          <Rating
+            name="read-only"
+            value={item.rating}
+            readOnly
+          />
+        </div>
+        <ButtonGroup id="item-btns" variant="contained" aria-label="Basic button group">
+          <Link to={`/edit-item/${item.id}`}><Button>Editar</Button></Link>
+          <Popconfirm title="Eliminar recomendación" description="¿Estas seguro de eliminar esta recomendación?" okText="Si" 
+          onConfirm={handleDelete} cancelText="No" onCancel={null}>
+            <Button>Eliminar</Button>
+          </Popconfirm>
+          <Button className= "back-itemdet-btn" color="primary" onClick={()=>{navigate(-1);}}>Volver</Button>
         </ButtonGroup>
       </div>
     </div>

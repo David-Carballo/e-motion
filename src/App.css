@@ -25,6 +25,10 @@ img {
   padding: 10px 0px;
 }
 
+#navbar-links a:hover{
+  color: var(--primary-color);
+}
+
 #navbar > img {
   width: 1.5rem;
   height: 1.5rem;
@@ -35,21 +39,6 @@ img {
   top: 0;
 }
 
-#footer {
-  min-height: 2rem;
-}
-
-#footer {
-  height: 100%;
-  padding: 2px;
-  align-items: center;
-}
-
-#footer a img {
-  width: auto;
-  height: 2rem;
-}
-
 #app {
   min-height: 100svh;
   display: flex;
@@ -58,9 +47,12 @@ img {
 }
 
 #dashboard>div:first-child{
+  display: flex;
+  flex-direction: column;
   text-align: center;
   position: relative;
   width: 50%;
+  height: 200px;
 }
 
 #emojis-btn a{
@@ -76,60 +68,18 @@ img {
   transition: 0.5s;
 }
 
+#mood{
+  margin: 2rem;
+}
+
 #grid {
   width: 100%;
   padding: 5rem 0;
   flex-direction: row;
   flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 4rem;
-}
-
-#card {
-  position: relative;
-  width: 200px;
-  height: 300px;
-}
-
-#card:hover {
-  transform: scale(1.08);
-  transition: 0.2s;
-}
-
-#card img {
-  display: block;
-  width: 200px;
-  height: 300px;
-  filter: brightness(0.9);
-  overflow: hidden;
-  border-radius: 10px;
-  /* border: 2px solid transparent; */
-  box-shadow: 2px 2px 20px 5px var(--shadow);
-}
-
-#card img:hover {
-  filter: brightness(1);
-  border: 2px solid var(--primary-color);
-  box-shadow: 2px 2px 20px 1px var(--shadow-accent);
-}
-
-#card > div {
-  position: absolute;
-  background-color: var(--shadow-dark);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  left: 0;
-  bottom: 0%;
-  width: 100%;
-  height: 20%;
-}
-
-#card p {
-  /* display: none; */
-  font-size: 1rem;
-  font-weight: bold;
-  align-self: center;
 }
 
 #about {
@@ -273,12 +223,6 @@ img {
   border-radius: 10px;
 }
 
-#item-detail {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 #edit-item-container{
 background-image: url("/src/assets/pruebabackground.jpg");
 background-size: cover;
@@ -318,13 +262,6 @@ background-size: cover;
   
 }
 
-.img-nofav{
-filter: saturate(0);
-}
-
-.img-fav{
-  filter: saturate(100%);
-  }
 /* ? TABLET */
 @media (min-width: 480px) {
   #root {
@@ -433,6 +370,11 @@ filter: saturate(0);
   #navbar-links {
     display: flex;
     width: 50%;
+  }
+
+  #grid {
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   #navbar-links a {

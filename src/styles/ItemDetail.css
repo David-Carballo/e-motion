@@ -1,0 +1,107 @@
+/* ? MOBILE */
+
+#item-description{
+    height: 30rem;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: var(--shadow-dark);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 5px var(--shadow-accent);
+}
+
+
+.item-fav {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+#item-image{
+    position: relative;
+    border-radius: 10px;
+    border: 0.5px solid var(--primary-color);
+}
+
+#item-image img{
+    border-radius: 10px;
+}
+
+#item-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.MuiButton-root{
+    border-color: transparent !important;
+}
+
+.MuiButton-colorPrimary{
+    background-color: var(--primary-color) !important;
+    color: black !important;
+    border-radius: 10px !important;
+}
+
+.MuiButton-colorPrimary:hover{
+    box-shadow: 0px 0px 10px 1px var(--primary-color) !important;
+    transition: 0.2s;
+}
+
+.MuiRating-icon {
+    color: var(--primary-color);
+}
+
+.MuiRating-iconEmpty {
+    color: var(--primary-color) !important;
+}
+
+.img-nofav {       
+    filter: saturate(0);
+}
+
+.img-fav {
+    filter: saturate(100%);
+}
+
+
+/* ? TABLET */
+@media (min-width: 480px) {
+
+}
+
+
+/* ? PC */
+@media (min-width: 1024px) {
+
+    #item-detail{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10rem;
+    }
+
+
+    #item-description{
+        height: 30rem;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2rem;
+        background-color: var(--shadow-dark);
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px 5px var(--shadow-accent);
+    
+    }
+    
+    #item-btns{
+        display: flex;
+        gap: 20px;
+    }
+    
+}

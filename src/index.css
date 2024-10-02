@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Varta:wght@300..700&display=swap');
 
 :root {
-  font-family: Cairo, Varta, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Varta, Cairo, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -93,6 +93,7 @@ body {
   --shadow-dark: rgba(0,0,0, 0.6);
   --shadow-accent: rgba(56, 89, 255, 0.5);
 } 
+
 .purple-theme {
   color: rgb(73, 0, 59);
   background-color: rgb(53, 22, 53);
@@ -106,7 +107,6 @@ body {
   --shadow-dark: rgba(0,0,0, 0.6);
   --shadow-accent: rgba(73, 0, 59, 0.2);
 }
-
 
 a, p, h1, h2, h3, h4, h5 , h6, label{
   color: var(--text-color)
@@ -131,10 +131,12 @@ input[type=checkbox]{
   width: 15px;
   height: 15px;
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 input[type=checkbox]:checked{
   border: 2px solid var(--primary-color);
-  background-color: var(--shadow-accent); 
+  background-color: var(--primary-color); 
   transition: 0.3s ease-in-out;
+  
 }

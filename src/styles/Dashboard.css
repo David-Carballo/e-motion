@@ -1,0 +1,17 @@
+/* ? MOBILE */
+.mood-container{
+    position: fixed;
+}
+
+/* ? TABLET */
+@media (min-width: 480px) {
+
+
+}
+
+
+/* ? PC */
+@media (min-width: 1024px) {
+
+
+}
