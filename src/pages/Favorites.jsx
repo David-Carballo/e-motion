@@ -3,6 +3,8 @@ import SearchBar from '../components/SearchBar'
 import FilterBar from '../components/FilterBar'
 import Card from '../components/Card'
 import axios from 'axios'
+import Box from '@mui/material/Box';
+import Skeleton from '@mui/material/Skeleton';
 
 function Favorites({setColorTheme}) {
 
@@ -24,7 +26,12 @@ function Favorites({setColorTheme}) {
   }
 
   // Crear un skeleton para mostrar loading
-  if(!favoritesData) return <h1>Loading...</h1>
+  if(!favoritesData) return  
+  (<Box sx={{ width: 300 }}>
+  <Skeleton />
+  <Skeleton animation="wave" />
+  <Skeleton animation={false} />
+</Box>)
 
   return (
     <div id="favorites">

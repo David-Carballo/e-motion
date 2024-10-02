@@ -289,9 +289,30 @@ img {
   text-align: center;
 }
 #edit-item label {
-  padding-bottom: 50px;
+  padding-bottom: 1vh;
+  padding-top: 1vh;
 }
 
+#submit-btn{
+  padding-top: 1vh;
+
+}
+
+.pacman{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 500px;
+  
+}
+
+.img-nofav{
+filter: saturate(0);
+}
+
+.img-fav{
+  filter: saturate(100%);
+  }
 /* ? TABLET */
 @media (min-width: 480px) {
   #root {

@@ -4,6 +4,10 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from "axios";
 import { Image } from 'antd'
 import {Popconfirm } from 'antd'
+import { PacmanLoader } from 'react-spinners';
+import favLogo from "/src/assets/fav.png"
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 function ItemDetail() {
   
@@ -56,11 +60,12 @@ function ItemDetail() {
     }
   }
 
-  if(item === null) return <h1>Loading...</h1>
+  if(item === null) return <PacmanLoader color="#eeec0b" className="pacman"/>
   
   return (
   
     <div id="item-detail">
+      
       <Image width={200} src={item.URL} preview={{
             destroyOnClose: true,
             imageRender: () => (
@@ -74,21 +79,27 @@ function ItemDetail() {
           }}
 
       />
+<img src={favLogo} onClick={handleIsFavorite} className={item.isFavorite ? "img-fav" : "img-nofav" } style={{width:"50px"}}/>
+      <br></br>
       <h3>Titulo: {item.title}</h3>
       <p>Duración:{item.length}</p>
       <p>Genero: {item.genre}</p>
       <p>Año: {item.year}</p>
       <p>Valoración: {item.rating}</p>
-      <button onClick={handleIsFavorite}> Añadir a favoritos </button>
+      
+      
 
       <div>
-        <Link to={`/edit-item/${item.id}`}><button>Edit</button></Link>
-        <Popconfirm title="Delete the task" description="Are you sure to delete this task?" okText="Yes" 
+      <br></br>
+      <ButtonGroup variant="contained" aria-label="Basic button group">
+        <Link to={`/edit-item/${item.id}`}><Button>Edit</Button></Link>
+        <Popconfirm title="Eliminar recomendación" description="¿Estas seguro de eliminar esta recomendación?" okText="Si" 
         onConfirm={handleDelete} cancelText="No" onCancel={null}
         >
-          <button>Delete</button>
+          <Button>Delete</Button>
         </Popconfirm>
-        <button className= "back-itemdet-btn"onClick={()=>{navigate(-1);}}>Back</button>
+        <Button className= "back-itemdet-btn"onClick={()=>{navigate(-1);}}>Back</Button>
+        </ButtonGroup>
       </div>
     </div>
 
