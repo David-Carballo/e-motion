@@ -33,30 +33,6 @@ function FilterBar({filterDuration, setFilterDuration, filterCategory, setFilter
           <label>Canciones</label>
         </div>
       </div>
-      {/* <div className='filter-duration'>
-          {filterCategory.songs ? (
-            <>
-              <p>{`Máx. segundos: ${filterDuration/60} segs`}</p>
-              <input onChange={handleDuration} type="range" min="0" max="300" step="10" value={filterDuration}/>
-            </>
-          ) : null}
-          {
-           filterCategory.books ? (
-            <>
-              <p>{`Máx. páginas: ${filterDuration} págs`}</p>
-              <input onChange={handleDuration} type="range" min="0" max="300" step="10" value={filterDuration}/>
-            </>
-            ) : null
-          }
-          {
-           filterCategory.movies ? (
-            <>
-              <p>{`Máx. minutos: ${filterDuration} minutos`}</p>
-              <input onChange={handleDuration} type="range" min="0" max="300" step="10" value={filterDuration}/>
-            </>
-           ) : null
-          }
-      </div> */}
     </div>
   )
 }

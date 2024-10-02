@@ -1,0 +1,40 @@
+/* ? MOBILE */
+
+  #footer {
+    display: flex;
+    gap: 20rem;
+    min-height: 2rem;
+    height: 100%;
+    padding: 2px;
+    align-items: center;
+    padding:  10px 0;
+    border-top: 2px solid var(--background-color);
+  }
+
+  #footer a{
+    text-decoration: none;
+    width: auto;
+    height: 2rem;
+  }
+  #footer a:hover{
+    color: var(--primary-color);
+  }
+  
+  #footer a img {
+    width: auto;
+    height: 2rem;
+  }
+
+
+/* ? TABLET */
+@media (min-width: 480px) {
+
+
+}
+
+
+/* ? PC */
+@media (min-width: 1024px) {
+
+
+}

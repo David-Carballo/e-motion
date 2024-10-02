@@ -1,3 +1,4 @@
+import '../styles/Dashboard.css'
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Carousel } from 'antd';
@@ -7,17 +8,6 @@ import { PacmanLoader } from 'react-spinners';
 function Dashboard({setColorTheme}) {
   const navigate = useNavigate()
   const [items, setItems] = useState(null)
-  
-  
-  const contentStyle = {
-    height: '160px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-    effect: "fade",
-   
-  };
 
   useEffect(() =>{
     setColorTheme("dark");
@@ -34,27 +24,22 @@ function Dashboard({setColorTheme}) {
     }
   }
 
- 
+  if (items === null){
+    return <PacmanLoader color="#eeec0b" className="pacman"/>
+  }
 
-
-
-
-if (items === null){
-  return <PacmanLoader color="#eeec0b" className="pacman"/>
-}
-
-let index1 = Math.floor(Math.random() * items.length)
-let index2 = Math.floor(Math.random() * items.length)
-let index3 =Math.floor(Math.random() * items.length)
-let index4= Math.floor(Math.random() * items.length)
-let index5= Math.floor(Math.random() * items.length)
-let index6= Math.floor(Math.random() * items.length)
+  let index1 = Math.floor(Math.random() * items.length)
+  let index2 = Math.floor(Math.random() * items.length)
+  let index3 =Math.floor(Math.random() * items.length)
+  let index4= Math.floor(Math.random() * items.length)
+  let index5= Math.floor(Math.random() * items.length)
+  let index6= Math.floor(Math.random() * items.length)
 
 
   return (
    
     <div id="dashboard" className='flex-column'>
-      <div>
+      <div className='mood-container'>
         <h3>¿Cómo te encuentras hoy?</h3>
         <div id="emojis-btn" className='flex-row gap-10'>
           <Link to="/moods/happy">😀</Link>

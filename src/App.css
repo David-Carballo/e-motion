@@ -35,21 +35,6 @@ img {
   top: 0;
 }
 
-#footer {
-  min-height: 2rem;
-}
-
-#footer {
-  height: 100%;
-  padding: 2px;
-  align-items: center;
-}
-
-#footer a img {
-  width: auto;
-  height: 2rem;
-}
-
 #app {
   min-height: 100svh;
   display: flex;
@@ -58,9 +43,12 @@ img {
 }
 
 #dashboard>div:first-child{
+  display: flex;
+  flex-direction: column;
   text-align: center;
   position: relative;
   width: 50%;
+  height: 200px;
 }
 
 #emojis-btn a{
@@ -273,12 +261,6 @@ img {
   border-radius: 10px;
 }
 
-#item-detail {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 #edit-item {
   margin-left: 30vw;
   border: 1px solid black;
@@ -307,13 +289,6 @@ img {
   
 }
 
-.img-nofav{
-filter: saturate(0);
-}
-
-.img-fav{
-  filter: saturate(100%);
-  }
 /* ? TABLET */
 @media (min-width: 480px) {
   #root {

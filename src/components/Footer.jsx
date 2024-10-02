@@ -1,7 +1,7 @@
+import '../styles/Footer.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logoGithub from "/src/assets/github-icon.png"
-
 
 function Footer() {
   return (

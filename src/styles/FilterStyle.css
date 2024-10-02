@@ -31,7 +31,7 @@
 /* ? PC */
 @media (min-width: 1024px) {
     .filters {
-        border: 2px solid var(--primary-color);
+        border-left: 2px solid var(--primary-color);
         padding: 2%;
         position: sticky;
         top: 5rem;
@@ -39,7 +39,7 @@
         justify-content: flex-start;
         gap: 4rem;
         width: 20%;
-        height: 50svh;
+        height: 100svh;
     }
 
     #filter-bar{
