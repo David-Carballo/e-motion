@@ -4,7 +4,7 @@ import { Carousel } from 'antd';
 import axios from 'axios';
 import { PacmanLoader } from 'react-spinners';
 
-function Dashboard({handleToggleTheme}) {
+function Dashboard({setColorTheme}) {
   const navigate = useNavigate()
   const [items, setItems] = useState(null)
   
@@ -20,6 +20,7 @@ function Dashboard({handleToggleTheme}) {
   };
 
   useEffect(() =>{
+    setColorTheme("dark");
     getData()
   },[])
 

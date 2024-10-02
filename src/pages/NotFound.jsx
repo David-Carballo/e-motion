@@ -2,15 +2,17 @@ import React, { useEffect } from 'react'
 import logo from "/src/assets/error404.png"
 import { useNavigate } from 'react-router-dom'
 
-function NotFound() {
+function NotFound({setColorTheme}) {
   const navigate = useNavigate()
  
 
   useEffect( () =>{
+    setColorTheme("dark")
     const setTimeoutId = setTimeout (() =>{
       navigate("/")
     },10000) 
   }, [])
+  
   return (
     <div id="not-found">
      

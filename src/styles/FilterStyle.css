@@ -1,0 +1,56 @@
+/* ? MOBILE */
+
+
+.filters {
+    top: 5rem;
+    margin-top: 2rem;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.filter-category{
+    display: flex;
+    flex-direction: row;
+    gap: 20px
+}
+
+.checkbox-row{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+/* ? TABLET */
+@media (min-width: 480px) {
+
+
+}
+
+
+/* ? PC */
+@media (min-width: 1024px) {
+    .filters {
+        border: 2px solid var(--primary-color);
+        padding: 2%;
+        position: sticky;
+        top: 5rem;
+        margin-top: 5rem;
+        justify-content: flex-start;
+        gap: 4rem;
+        width: 20%;
+        height: 50svh;
+    }
+
+    #filter-bar{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .filter-category{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}

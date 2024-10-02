@@ -6,7 +6,7 @@ import axios from 'axios'
 import Box from '@mui/material/Box';
 import Skeleton from '@mui/material/Skeleton';
 
-function Favorites() {
+function Favorites({setColorTheme}) {
 
   const [favoritesData, setFavoritesData] = useState(null);
 
@@ -15,6 +15,7 @@ function Favorites() {
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(()=>{
+    setColorTheme("dark");
     getFavoritesData();  
      
   }, [])
@@ -34,7 +35,7 @@ function Favorites() {
 
   return (
     <div id="favorites">
-      <div className='container'>
+      <div className='filter-container'>
         <div className='filters flex-column'>
           <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
           <FilterBar filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>

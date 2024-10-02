@@ -55,8 +55,6 @@ function ItemDetail() {
 
       await axios.patch(`${import.meta.env.VITE_SERVER_URL}/items/${params.itemId}`, {isFavorite: cloneItem.isFavorite});
       
-      
-      
     } catch (error) {
       console.log(error);
     }
