@@ -28,7 +28,7 @@ function Favorites({setColorTheme}) {
 
   return (
     <div id="favorites">
-      <div className='container'>
+      <div className='filter-container'>
         <div className='filters flex-column'>
           <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
           <FilterBar filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>

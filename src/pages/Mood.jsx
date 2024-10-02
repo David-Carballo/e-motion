@@ -14,6 +14,7 @@ function Mood({setColorTheme}) {
   //Filter states
   const [filterCategory, setFilterCategory] = useState({movies: false, books: false, songs:false})
   const [searchValue, setSearchValue] = useState("");
+  const [filterDuration, setFilterDuration] = useState(200);
 
 
   useEffect(()=>{
@@ -34,10 +35,10 @@ function Mood({setColorTheme}) {
       <div className='mood-feel flex-row'>
         <h3>{moodData.emoji} {moodData.message}</h3>
       </div>
-      <div className='container'>
+      <div className='filter-container'>
         <div className='filters flex-column'>
           <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
-          <FilterBar filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>
+          <FilterBar filterDuration={filterDuration} setFilterDuration={setFilterDuration} filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>
         </div>
         <div id="grid" className='flex-row'>
           

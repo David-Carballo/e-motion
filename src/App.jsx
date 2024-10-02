@@ -27,7 +27,7 @@ function App() {
         <Route path={"/"} element={<Dashboard setColorTheme={setColorTheme}/>} />
         <Route path={"/about"} element={<About setColorTheme={setColorTheme}/>} />
         <Route path={"/favorites"} element={<Favorites setColorTheme={setColorTheme}/>} />
-        <Route path={"/add-item"} element={<AddItem />} setColorTheme={setColorTheme}/>
+        <Route path={"/add-item"} element={<AddItem setColorTheme={setColorTheme}/>} />
         <Route path={"/edit-item/:itemId"} element={<EditItem />}/>
 
         <Route path={"/items/:itemId"} element={<ItemDetail />} />
