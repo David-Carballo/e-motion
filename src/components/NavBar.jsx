@@ -11,7 +11,7 @@ function NavBar() {
             <div id="navbar-links" className='flex-row space-between'>
                 <Link to={"/"}>Home</Link>
                 <Link to={"/favorites"}>♡ Favoritos</Link>
-                <Link to={"/add-item"} className='navbar-add'>+ Añadir</Link>
+                <Link to={"/add-item"} className='navbar-add'>✏Añadir</Link>
             </div>
         </div>
     );

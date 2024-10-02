@@ -279,10 +279,21 @@ img {
   align-items: center;
 }
 
+#edit-item-container{
+background-image: url("/src/assets/pruebabackground.jpg");
+background-size: cover;
+
+
+
+}
+
 #edit-item {
-  margin-left: 30vw;
-  border: 1px solid black;
-  width: 40vw;
+  margin-left: 15vw;
+  border: 1px solid rgb(255, 249, 249);
+  background-color: rgba(82, 70, 70, 0.486);
+  backdrop-filter: blur(10px);
+  border-radius:10px;
+  width: 60vw;
   height: 70vh;
   display: flex;
   flex-direction: column;
@@ -353,6 +364,9 @@ filter: saturate(0);
     color: var(--primary-color);
     border-radius: 10px;
     border: 2px solid var(--primary-color);
+    background-color: rgb(177, 177, 177);
+    text-align: center;
+    margin-right: 4vw;
   }
 
   .navbar-add:focus {

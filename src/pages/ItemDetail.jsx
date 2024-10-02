@@ -9,6 +9,7 @@ import favLogo from "/src/assets/fav.png"
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
+
 function ItemDetail() {
   
   const[item, setItem] = useState(null)
@@ -86,6 +87,14 @@ function ItemDetail() {
       <p>Genero: {item.genre}</p>
       <p>Año: {item.year}</p>
       <p>Valoración: {item.rating}</p>
+      <iframe
+      src= {item.youtube}
+      width='1440'
+      height='680'
+      controls
+      playsInline
+      
+      />
 
       
       

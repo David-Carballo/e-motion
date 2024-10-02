@@ -55,8 +55,8 @@ function EditItem() {
   if(editFormItem === null) return <PacmanLoader color="#eeec0b" className="pacman"/>
   
   return (
-    <div id="edit-item">
-      <form onSubmit={handleEditItem}>
+    <div id="edit-item-container">
+      <form onSubmit={handleEditItem} id="edit-item">
         <label>Titulo</label>
         <input className="input-text"
           type="text"
