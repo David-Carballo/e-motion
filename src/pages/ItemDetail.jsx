@@ -63,77 +63,54 @@ function ItemDetail() {
   if (item === null) return <PacmanLoader color="#eeec0b" className="pacman" />;
 
   return (
-    <div id="item-image">
-      <Image
-        style={{ height: "30rem" }}
-        src={item.URL}
-        preview={{
-          destroyOnClose: true,
-          imageRender: () => (
-            <img
-              style={{ height: "90%", width: "auto" }}
-              controls
-              src={item.URL}
-            />
-          ),
-          toolbarRender: () => null,
-        }}
-      />
-
-      <div id="item-description">
-        <h3>{item.title}</h3>
-        <div>
-          <p>
-            <strong>Duración:</strong> {item.length}
-          </p>
-          <p>
-            <strong>Género:</strong> {item.genre}
-          </p>
-          <p>
-            <strong>Año:</strong> {item.year}
-          </p>
-          <p>
-            <strong>Valoración:</strong>
-          </p>
-          <Rating name="read-only" value={item.rating} readOnly />
-          <iframe
-            src={item.youtube}
-            width="1440"
-            height="680"
-            controls
-            playsInline
-          />
-        </div>
-        <ButtonGroup
-          id="item-btns"
-          variant="contained"
-          aria-label="Basic button group"
-        >
-          <Link to={`/edit-item/${item.id}`}>
-            <Button>Editar</Button>
-          </Link>
-          <Popconfirm
-            title="Eliminar recomendación"
-            description="¿Estas seguro de eliminar esta recomendación?"
-            okText="Si"
-            onConfirm={handleDelete}
-            cancelText="No"
-            onCancel={null}
-          >
-            <Button>Eliminar</Button>
-          </Popconfirm>
-          <Button
-            className="back-itemdet-btn"
-            color="primary"
-            onClick={() => {
-              navigate(-1);
+    <>
+      <div id="item-detail">
+        <div id="item-image">
+          <Image style={{height: "30rem"}} src={item.URL} preview={{
+                destroyOnClose: true,
+                imageRender: () => (
+                  <img
+                    style={{height:"90%", width:"auto"}}
+                    controls
+                    src={item.URL}
+                  />
+                ),
+                toolbarRender: () => null
             }}
-          >
-            Volver
-          </Button>
-        </ButtonGroup>
+          />
+          <img src={favLogo} onClick={handleIsFavorite} className={`${item.isFavorite ? "img-fav" : "img-nofav"} item-fav`} style={{width:"50px"}}/>
+        </div>
+        <div id="item-description">
+          <h3>{item.title}</h3>
+          <div>
+            <p><strong>Duración:</strong> {item.length}</p>
+            <p><strong>Género:</strong> {item.genre}</p>
+            <p><strong>Año:</strong> {item.year}</p>
+            <p><strong>Valoración:</strong></p>
+            <Rating
+              name="read-only"
+              value={item.rating}
+              readOnly
+            />
+          </div>
+          <ButtonGroup id="item-btns" variant="contained" aria-label="Basic button group">
+            <Link to={`/edit-item/${item.id}`}><Button>Editar</Button></Link>
+            <Popconfirm title="Eliminar recomendación" description="¿Estas seguro de eliminar esta recomendación?" okText="Si" 
+            onConfirm={handleDelete} cancelText="No" onCancel={null}>
+              <Button>Eliminar</Button>
+            </Popconfirm>
+            <Button className= "back-itemdet-btn" color="primary" onClick={()=>{navigate(-1);}}>Volver</Button>
+          </ButtonGroup>
+        </div>
       </div>
-    </div>
+      <iframe
+      src= {item.youtube}
+      width='1440'
+      height='680'
+      controls
+      playsInline
+    />
+    </>
   );
 }
 
