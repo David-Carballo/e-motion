@@ -26,12 +26,25 @@ function Favorites({setColorTheme}) {
   }
 
   // Crear un skeleton para mostrar loading
-  if(!favoritesData) return  
-  (<Box sx={{ width: 300 }}>
-  <Skeleton />
-  <Skeleton animation="wave" />
-  <Skeleton animation={false} />
-</Box>)
+  if(!favoritesData) {
+    return  (
+      <div id="favorites" className='flex-row'>
+        <Box sx={{ width: 240 }}>
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+        </Box>
+        <Box sx={{ width: 240 }}>
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+        </Box>
+        <Box sx={{ width: 240 }}>
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+        </Box>
+      </div>
+
+    )
+  }
 
   return (
     <div id="favorites">

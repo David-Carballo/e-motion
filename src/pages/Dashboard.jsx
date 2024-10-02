@@ -25,7 +25,7 @@ function Dashboard({setColorTheme}) {
   }
 
   if (items === null){
-    return <PacmanLoader color="#eeec0b" className="pacman"/>
+    return <div id="dashboard" className='flex-column'><PacmanLoader color="var(--primary-color)" className="pacman"/></div>
   }
 
   let index1 = Math.floor(Math.random() * items.length)

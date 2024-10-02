@@ -49,7 +49,7 @@ function EditItem() {
     }
   };
 
-  if(editFormItem === null) return <PacmanLoader color="#eeec0b" className="pacman"/>
+  if(editFormItem === null) return <div className='flex-row'><PacmanLoader color="var(--primary-color)" className="pacman"/></div>
   
   return (
     <div id="edit-item-container">
