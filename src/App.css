@@ -262,6 +262,14 @@ background-size: cover;
   
 }
 
+
+
+#item-description iframe{
+  width: 30vw;
+  height: 30vh;
+ 
+}
+
 /* ? TABLET */
 @media (min-width: 480px) {
   #root {
