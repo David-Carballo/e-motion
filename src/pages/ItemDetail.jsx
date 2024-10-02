@@ -105,8 +105,6 @@ function ItemDetail() {
       </div>
       <iframe
       src= {item.youtube}
-      width='1440'
-      height='680'
       controls
       playsInline
     />
