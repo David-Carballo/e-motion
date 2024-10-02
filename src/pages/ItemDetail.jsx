@@ -75,6 +75,7 @@ function ItemDetail() {
                     playsInline
                   />
                 ),
+                maskClassName: "mask-preview",
                 toolbarRender: () => null
             }}
           />

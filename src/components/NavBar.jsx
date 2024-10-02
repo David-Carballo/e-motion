@@ -1,3 +1,4 @@
+import '../styles/NavBar.css'
 import React from 'react'
 import { Link } from 'react-router-dom';
 import menuIcon from "/src/assets/menu-icon.png"
@@ -11,7 +12,7 @@ function NavBar() {
             <div id="navbar-links" className='flex-row space-between'>
                 <Link to={"/"}>Home</Link>
                 <Link to={"/favorites"}>♡ Favoritos</Link>
-                <Link to={"/add-item"} className='navbar-add'>✏Añadir</Link>
+                <Link to={"/add-item"} className='navbar-add'>✏️ Añadir</Link>
             </div>
         </div>
     );

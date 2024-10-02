@@ -1,3 +1,4 @@
+import '../styles/About.css'
 import React, { useEffect } from 'react'
 import logoGithub from "/src/assets/github-icon.png"
 import logoLinkedin from "/src/assets/linkedin-icon.png"

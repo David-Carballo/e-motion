@@ -30,11 +30,10 @@ function Dashboard({setColorTheme}) {
 
   let index1 = Math.floor(Math.random() * items.length)
   let index2 = Math.floor(Math.random() * items.length)
-  let index3 =Math.floor(Math.random() * items.length)
-  let index4= Math.floor(Math.random() * items.length)
-  let index5= Math.floor(Math.random() * items.length)
-  let index6= Math.floor(Math.random() * items.length)
-
+  let index3 = Math.floor(Math.random() * items.length)
+  let index4 = Math.floor(Math.random() * items.length)
+  let index5 = Math.floor(Math.random() * items.length)
+  let index6 = Math.floor(Math.random() * items.length)
 
   return (
    
@@ -53,40 +52,40 @@ function Dashboard({setColorTheme}) {
         <h6>Recomendaciones</h6>
         <Carousel autoplay slidesToShow={3} className='flex-row'>
           <div>
-          <Link to={`/items/${items[index1].id}`}>
-            <img src={items[index1].URL} alt={items.type} />
+            <Link to={`/items/${items[index1].id}`}>
+              <img src={items[index1].URL} alt={items.type} />
             </Link>
           </div>
           <div>
-          <Link to={`/items/${items[index2].id}`}>
-            <img src={items[index2].URL} alt={items.type} />
-          </Link>
+            <Link to={`/items/${items[index2].id}`}>
+              <img src={items[index2].URL} alt={items.type} />
+            </Link>
           </div>
 
           <div>
-          <Link to={`/items/${items[index3].id}`}>
-            <img src={items[index3].URL} alt={items.type} />
+            <Link to={`/items/${items[index3].id}`}>
+              <img src={items[index3].URL} alt={items.type} />
             </Link>
           </div>
           <div>
-          <Link to={`/items/${items[index4].id}`}>
-            <img src={items[index4].URL} alt={items.type} />
+            <Link to={`/items/${items[index4].id}`}>
+              <img src={items[index4].URL} alt={items.type} />
             </Link>
           </div>
           <div>
-          <Link to={`/items/${items[index5].id}`}>
-            <img src={items[index5].URL} alt={items.type} />
+            <Link to={`/items/${items[index5].id}`}>
+              <img src={items[index5].URL} alt={items.type} />
             </Link>
           </div>
           <div>
-          <Link to={`/items/${items[index6].id}`}>
-            <img src={items[index6].URL} alt={items.type} />
+            <Link to={`/items/${items[index6].id}`}>
+              <img src={items[index6].URL} alt={items.type} />
             </Link>
           </div>
         </Carousel>
       </div>
       <div className="carousel">
-        <h6>Recomendaciones añadidas recientemente</h6>
+        <h6>Añadidas recientemente</h6>
         <Carousel autoplay slidesToShow={3}>
           <div>
             <Link to={`/items/${items[items.length-1].id}`}>

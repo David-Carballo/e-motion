@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Varta:wght@300..700&display=swap');
 
 :root {
-  font-family: Varta, Cairo, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Cairo', 'Varta', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -18,6 +18,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Varta', 'Cairo';
 }
 
 *{
@@ -31,7 +32,7 @@ body {
   --text-color: rgb(255, 255, 255);
   --background-color: rgb(40, 40, 40);
   --primary-color: rgb(255, 222, 52);
-  --secondary-color: rgb(175, 175, 175);
+  --secondary-color: rgb(255, 232, 120);
 
   --shadow: rgba(0,0,0, 0.9);
   --shadow-dark: rgba(0,0,0, 0.6);
@@ -45,7 +46,7 @@ body {
   --text-color: rgb(255, 255, 255);
   --background-color: rgb(59, 12, 12);
   --primary-color: rgb(181,0,0);
-  --secondary-color: rgb(175, 175, 175);
+  --secondary-color: rgb(255, 92, 92);
 
   --shadow: rgba(0,0,0, 0.9);
   --shadow-dark: rgba(0,0,0, 0.6);
@@ -59,7 +60,7 @@ body {
   --text-color: rgb(255, 255, 255);
   --background-color: rgb(92, 92, 52);
   --primary-color: rgb(255, 222, 52);
-  --secondary-color: rgb(175, 175, 175);
+  --secondary-color: rgb(255, 232, 120);
 
   --shadow: rgba(0,0,0, 0.9);
   --shadow-dark: rgba(0,0,0, 0.6);
@@ -73,7 +74,7 @@ body {
   --text-color: rgb(255, 255, 255);
   --background-color: rgb(146, 90, 146);
   --primary-color: rgb(255, 165, 236);
-  --secondary-color: rgb(175, 175, 175);
+  --secondary-color: rgb(251, 204, 241);
 
   --shadow: rgba(0,0,0, 0.9);
   --shadow-dark: rgba(0,0,0, 0.6);
@@ -87,7 +88,7 @@ body {
   --text-color: rgb(255, 255, 255);
   --background-color: rgb(0, 0, 40);
   --primary-color: rgb(56, 89, 255);
-  --secondary-color: rgb(175, 175, 175);
+  --secondary-color: rgb(106, 128, 255);
 
   --shadow: rgba(0,0,0, 0.1);
   --shadow-dark: rgba(0,0,0, 0.6);
@@ -101,7 +102,7 @@ body {
   --text-color: rgb(255, 255, 255);
   --background-color: rgb(53, 22, 53);
   --primary-color: rgb(73, 0, 59);
-  --secondary-color: rgb(175, 175, 175);
+  --secondary-color: rgb(167, 0, 134);
 
   --shadow: rgba(0,0,0, 0.9);
   --shadow-dark: rgba(0,0,0, 0.6);
@@ -119,7 +120,6 @@ input, select{
 }
 
 input[type=text]:focus{
-  color: var(--background-color);
   outline: 2px dashed var(--primary-color);
   background-color: var(--primary-color);
 }

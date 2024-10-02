@@ -1,0 +1,38 @@
+/* ? MOBILE */
+
+#edit-item-container {
+  background-size: cover;
+  background-image: url("/src/assets/pruebabackground.jpg");
+  padding: 2rem 0;
+}
+
+#edit-item {
+  margin-left: 15vw;
+  border: 1px solid rgb(255, 249, 249);
+  background-color: rgba(82, 70, 70, 0.486);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+#edit-item label {
+  padding-bottom: 1vh;
+  padding-top: 1vh;
+}
+
+#submit-btn {
+  padding-top: 1vh;
+}
+
+/* ? TABLET */
+@media (min-width: 480px) {
+}
+
+/* ? PC */
+@media (min-width: 1024px) {
+}
