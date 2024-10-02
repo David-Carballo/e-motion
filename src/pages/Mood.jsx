@@ -4,6 +4,8 @@ import FilterBar from '../components/FilterBar'
 import Card from '../components/Card'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import Box from '@mui/material/Box';
+import Skeleton from '@mui/material/Skeleton';
 
 
 function Mood({setColorTheme}) {
@@ -27,8 +29,13 @@ function Mood({setColorTheme}) {
   }
 
   // Crear un skeleton para mostrar loading
-  if(!moodData) return <h1>Loading...</h1>
-
+  if(!moodData) return (
+  <Box sx={{ width: 300 }}>
+  <Skeleton />
+  <Skeleton animation="wave" />
+  <Skeleton animation={false} />
+</Box>
+  )
   return (
     <div id="mood">
       <div className='mood-feel flex-row'>

@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import React from "react";
 import { Alert } from "antd";
 import { useEffect } from "react";
+import { PacmanLoader } from "react-spinners";
 
 function EditItem() {
   
@@ -51,13 +52,13 @@ function EditItem() {
     }
   };
 
-  if(editFormItem === null) return <h1>Loading...</h1>
+  if(editFormItem === null) return <PacmanLoader color="#eeec0b" className="pacman"/>
   
   return (
     <div id="edit-item">
       <form onSubmit={handleEditItem}>
         <label>Titulo</label>
-        <input
+        <input className="input-text"
           type="text"
           value={editFormItem.title}
           onChange={handleChange}
@@ -65,7 +66,7 @@ function EditItem() {
           placeholder="Titulo"
         />
         <label>Año</label>
-        <input
+        <input className="input-text"
           type="number"
           value={editFormItem.year}
           onChange={handleChange}
@@ -73,7 +74,7 @@ function EditItem() {
           placeholder="año"
         />
         <label>Genero</label>
-        <input
+        <input className="input-text"
           type="text"
           value={editFormItem.genre}
           onChange={handleChange}
@@ -81,7 +82,7 @@ function EditItem() {
           placeholder="genero"
         />
         <label>URL </label>
-        <input
+        <input className="input-text"
           type="url"
           value={editFormItem.url}
           onChange={handleChange}
@@ -89,7 +90,7 @@ function EditItem() {
           placeholder="URL"
         />
         <label>Duración</label>
-        <input
+        <input className="input-text"
           type="number"
           value={editFormItem.length}
           onChange={handleChange}
@@ -120,9 +121,12 @@ function EditItem() {
           <option value="movie">Película</option>
           <option value="book">Libro</option>
         </select>
-        <Button type="submit" variant="outline-success">
+        <div id="submit-btn">
+          <Button type="submit" variant="outline-success" >
           Aplicar
         </Button>{" "}
+        </div>
+        
       </form>
       {showAlert ? (
         <Alert
