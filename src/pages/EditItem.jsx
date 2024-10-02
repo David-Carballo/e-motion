@@ -1,17 +1,36 @@
 import { useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import React from "react";
 import { Alert } from "antd";
+import { useEffect } from "react";
+import { PacmanLoader } from "react-spinners";
 
-function EditItem(props) {
-  const { item, setItem } = props;
-  const [editFormItem, setEditFormItem] = useState(item);
+function EditItem() {
+  
+  const [editFormItem, setEditFormItem] = useState(null);
   const params = useParams();
   const [showAlert, setShowAlert] = useState(false);
+ const navigate = useNavigate()
 
+
+  useEffect(() =>{
+
+    getData()
+
+  },[])
+
+  const getData= async () => {
+    try {
+      let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/items/${params.itemId}`)
+      setEditFormItem(response.data)
+      
+    } catch (error) {
+      navigate("/error")
+    }
+
+  }
   const handleChange = (event) => {
     const itemClone = structuredClone(editFormItem);
     itemClone[event.target.name] = event.target.value;
@@ -21,20 +40,6 @@ function EditItem(props) {
 
   const handleEditItem = async (event) => {
     event.preventDefault();
-    {
-      /*} const editItem = {
-      title,
-      year,
-      genre,
-      url,
-      length,
-      moodId,
-      rating: null,
-      isFavorite: false,
-      type,
-      
-    */
-    }
 
     try {
       const response = await axios.patch(
@@ -47,11 +52,13 @@ function EditItem(props) {
     }
   };
 
+  if(editFormItem === null) return <PacmanLoader color="#eeec0b" className="pacman"/>
+  
   return (
     <div id="edit-item">
       <form onSubmit={handleEditItem}>
         <label>Titulo</label>
-        <input
+        <input className="input-text"
           type="text"
           value={editFormItem.title}
           onChange={handleChange}
@@ -59,7 +66,7 @@ function EditItem(props) {
           placeholder="Titulo"
         />
         <label>Año</label>
-        <input
+        <input className="input-text"
           type="number"
           value={editFormItem.year}
           onChange={handleChange}
@@ -67,7 +74,7 @@ function EditItem(props) {
           placeholder="año"
         />
         <label>Genero</label>
-        <input
+        <input className="input-text"
           type="text"
           value={editFormItem.genre}
           onChange={handleChange}
@@ -75,7 +82,7 @@ function EditItem(props) {
           placeholder="genero"
         />
         <label>URL </label>
-        <input
+        <input className="input-text"
           type="url"
           value={editFormItem.url}
           onChange={handleChange}
@@ -83,7 +90,7 @@ function EditItem(props) {
           placeholder="URL"
         />
         <label>Duración</label>
-        <input
+        <input className="input-text"
           type="number"
           value={editFormItem.length}
           onChange={handleChange}
@@ -114,9 +121,12 @@ function EditItem(props) {
           <option value="movie">Película</option>
           <option value="book">Libro</option>
         </select>
-        <Button type="submit" variant="outline-success">
+        <div id="submit-btn">
+          <Button type="submit" variant="outline-success" >
           Aplicar
         </Button>{" "}
+        </div>
+        
       </form>
       {showAlert ? (
         <Alert

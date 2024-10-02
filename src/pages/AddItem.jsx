@@ -1,10 +1,9 @@
 import axios from 'axios';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button'
 import Rating from '@mui/material/Rating';
-import Stack from '@mui/material/Stack';
 
 
 function AddItem() {
@@ -30,6 +29,7 @@ function AddItem() {
   const handleRating = (e) => setRating (e.target.value)
   const handleIsFavorite = (e) => setIsFavorite (e.target.value)
   const handleType = (e) => setType (e.target.value)
+
 
   const handleFormSubmit = async (event) => {
   
@@ -128,23 +128,21 @@ function AddItem() {
 
         <label>Tipo de recomendación</label>
         <select onChange={handleType} value={type} name="type" id="lang">
-            <option value="song">Cancion</option>
-            <option value="movie">Pelicula</option>
-            <option value="book">Libro</option>
+          <option value="song">Cancion</option>
+          <option value="movie">Pelicula</option>
+          <option value="book">Libro</option>
+        </select>
 
-            </select>
-
-            <label>Valoración</label>
-            <div id="stack">
-            
-            <Rating
-        name="simple-controlled"
-        value={rating}
-        onChange={(event, newValue) => {
-          setRating(newValue);
-        }}
-      />
-    </div>
+        <label>Valoración</label>
+        <div id="stack">
+          <Rating
+            name="simple-controlled"
+            value={rating}
+            onChange={(event, newValue) => {
+              setRating(newValue);
+            }}
+          />
+        </div>
       <Button type="submit" variant="outline-success" id= "add-btn">Añadir recomendación</Button>{' '}
      {/*<button id= "add-btn">Añadir formulario</button>*/}
       </form>
