@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import logoGithub from "/src/assets/github-icon.png"
 import logoLinkedin from "/src/assets/linkedin-icon.png"
 
-function About() {
+function About({setColorTheme}) {
+
+    useEffect(()=>{
+        setColorTheme("dark");
+    },[])
+
     return(
         <div id="about"  className='flex-column'>
             <h1>About us</h1>

@@ -17,7 +17,7 @@ function Mood({setColorTheme}) {
 
 
   useEffect(()=>{
-    getMoodData();    
+    getMoodData();   
   }, [])
 
   const getMoodData = async () => {

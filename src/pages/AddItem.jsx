@@ -6,9 +6,13 @@ import Button from 'react-bootstrap/Button'
 import Rating from '@mui/material/Rating';
 
 
-function AddItem() {
+function AddItem({setColorTheme}) {
 
   const navigate = useNavigate()
+
+  useEffect(()=>{
+    setColorTheme("dark");
+  },[])
 
   const [title, setTitle]= useState("")
   const [year, setYear] = useState(0)
@@ -49,14 +53,8 @@ function AddItem() {
     }
 
     try {
-      
       const response = await axios.post(`${import.meta.env.VITE_SERVER_URL}/items`,newItem)
-
       navigate(`/moods/${moodId}`)
-
-
-
-
     } catch (error) {
       console.log(error);
       return navigate("/error")

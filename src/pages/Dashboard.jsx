@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Carousel } from 'antd';
 import axios from 'axios';
 
-function Dashboard({handleToggleTheme}) {
+function Dashboard({setColorTheme}) {
   const navigate = useNavigate()
   const [items, setItems] = useState(null)
   
@@ -19,6 +19,7 @@ function Dashboard({handleToggleTheme}) {
   };
 
   useEffect(() =>{
+    setColorTheme("dark");
     getData()
   },[])
 

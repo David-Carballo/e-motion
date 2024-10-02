@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "/src/assets/error500.jpg";
 import { Link } from "react-router-dom";
 
-function Error() {
+function Error({setColorTheme}) {
+
+  useEffect(()=>{
+    setColorTheme("dark");
+  },[])
+
   return (
     <div id="error">
       <img src={logo} alt="img" style={{ width: "300px", height: "300px" }} />

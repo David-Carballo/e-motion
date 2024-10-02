@@ -24,18 +24,18 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route path={"/"} element={<Dashboard />} />
-        <Route path={"/about"} element={<About />} />
-        <Route path={"/favorites"} element={<Favorites />} />
-        <Route path={"/add-item"} element={<AddItem />} />
+        <Route path={"/"} element={<Dashboard setColorTheme={setColorTheme}/>} />
+        <Route path={"/about"} element={<About setColorTheme={setColorTheme}/>} />
+        <Route path={"/favorites"} element={<Favorites setColorTheme={setColorTheme}/>} />
+        <Route path={"/add-item"} element={<AddItem />} setColorTheme={setColorTheme}/>
         <Route path={"/edit-item/:itemId"} element={<EditItem />}/>
 
         <Route path={"/items/:itemId"} element={<ItemDetail />} />
         <Route path={"/moods/:moodId"} element={<Mood setColorTheme={setColorTheme}/>} />
 
-        <Route path={"/error"} element={<Error />} />
+        <Route path={"/error"} element={<Error setColorTheme={setColorTheme}/>} />
 
-        <Route path={"*"} element={<NotFound />} />
+        <Route path={"*"} element={<NotFound setColorTheme={setColorTheme}/>} />
 
 
       </Routes>

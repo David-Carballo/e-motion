@@ -4,7 +4,7 @@ import FilterBar from '../components/FilterBar'
 import Card from '../components/Card'
 import axios from 'axios'
 
-function Favorites() {
+function Favorites({setColorTheme}) {
 
   const [favoritesData, setFavoritesData] = useState(null);
 
@@ -13,6 +13,7 @@ function Favorites() {
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(()=>{
+    setColorTheme("dark");
     getFavoritesData();  
      
   }, [])
