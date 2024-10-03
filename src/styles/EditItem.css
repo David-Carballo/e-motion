@@ -18,7 +18,7 @@
   padding: 2rem 0;
 }
 
-#edit-item :hover:not(label,h3) {
+#edit-item :hover:not(label,h3,#submit-btn,button) {
   filter: brightness(1);
   border: 2px solid var(--primary-color);
   box-shadow: 2px 2px 20px 1px var(--shadow-accent);
