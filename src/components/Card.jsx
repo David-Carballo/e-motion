@@ -2,16 +2,16 @@ import '../styles/Card.css'
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Rating from '@mui/material/Rating';
+import favLogo from "/src/assets/fav2.png";
 
 
 function Card(props){
 
-    const {id, title, year, genre, URL, length, rating, type, isFavorite} = props
+    const {id, title, year, genre, URL, rating, type, isFavorite} = props
 
-  //MouseEnter estado en true => display Titulo y Boton Favoritos
-  //MouseLeave estado en falso
     return(
         <Link to={`/items/${id}`} id="card">
+            <img src={favLogo} className={`${isFavorite ? "img-fav" : "img-nofav"} item-fav`} />
             <img src={URL} alt="" />
             <div className='flex-column'>
                 <p>{title}</p>

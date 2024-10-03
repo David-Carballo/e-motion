@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Box from '@mui/material/Box';
 import Skeleton from '@mui/material/Skeleton';
+import LinearProgress from '@mui/material/LinearProgress';
 
 
 function Mood({setColorTheme}) {
@@ -30,13 +31,26 @@ function Mood({setColorTheme}) {
   }
 
   // Crear un skeleton para mostrar loading
-  if(!moodData) return (
-  <Box sx={{ width: 300 }}>
-  <Skeleton />
-  <Skeleton animation="wave" />
-  <Skeleton animation={false} />
-</Box>
-  )
+  if(!moodData) {
+    return  (
+      <div id="mood" className='flex-row'>
+        <Box sx={{ width: 240 }}>
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+        </Box>
+        <Box sx={{ width: 240 }}>
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+        </Box>
+        <Box sx={{ width: 240 }}>
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+        </Box>
+      </div>
+
+    )
+  }
+
   return (
     <div id="mood">
       <div className='mood-feel flex-row'>

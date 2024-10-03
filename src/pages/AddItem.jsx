@@ -1,3 +1,4 @@
+import '../styles/AddItem.css'
 import axios from 'axios';
 import React, { useEffect } from 'react'
 import { useState } from 'react'
@@ -45,7 +46,6 @@ function AddItem({setColorTheme}) {
   const handleFormSubmit = async (event) => {
   
     event.preventDefault()
-    console.log("SUBMIT")
     const newItem = {
       title,
       year,
@@ -56,8 +56,7 @@ function AddItem({setColorTheme}) {
       rating,
       isFavorite: false,
       type,
-      youtube,
-
+      youtube
     }
 
     try {
@@ -77,69 +76,31 @@ function AddItem({setColorTheme}) {
         
         <h3>Si desea añadir alguna recomendación, rellene el siguiente formulario</h3>
         
-        <label>Titulo</label>
-        <input
-        type="text"
-        name = "titulo"
-        placeholder='Titulo'
-        value ={title}
-        onChange= {handleTitle}
-        />
+        <label>Título</label>
+        <input type="text" name = "titulo" placeholder='título' value ={title} onChange= {handleTitle}/>
 
         <label>Año</label>
-        <input
-        type= "number"
-        name = "year"
-        placeholder='año'
-        value={year}
-        onChange={handleYear}
-        />
+        <input type= "number" name = "year" placeholder='año' value={year} onChange={handleYear}/>
 
-        <label>Genero</label>
-        <input
-        type= "text"
-        name= "genre"
-        placeholder= "genero"
-        value = {genre}
-        onChange ={handleGenre}
-        />
+        <label>Género</label>
+        <input type= "text" name= "genre" placeholder= "genero" value = {genre} onChange ={handleGenre}/>
 
         <label>Imagen </label>
-        <input
-        type= "url"
-        name= "url"
-        placeholder= "URL"
-        value = {url}
-        
-        onChange={handleUrl}
-        />
+        <input type= "url" name= "url" placeholder= "url" value = {url} onChange={handleUrl}/>
 
         <label>Duración</label>
-        <input
-        type="number"
-        name= "length"
-        placeholder='duración'
-        value={length}
-        onChange={handleLength}
-        />
-          <label>URL Youtube </label>
-        <input
-        type= "url"
-        name= "youtube"
-        placeholder= "URL Youtube"
-        value = {youtube}
-        
-        onChange={handleYoutube}
-        />
+        <input type="number" name= "length" placeholder='duración' value={length} onChange={handleLength}/>
+          
+        <label>URL Youtube </label>
+        <input type= "url" name= "youtube" placeholder= "URL Youtube" value = {youtube} onChange={handleYoutube}/>
 
-        <label>¿Para que estado de ánimo?</label>
+        <label>¿Qué estado de ánimo representa?</label>
         <select onChange={handleMoodId} value={moodId} name="mood" id="lang1">
             <option value="rage">😡</option>
             <option value="happy">😀</option>
             <option value="sad">😢</option>
             <option value="scary">😱</option>
             <option value="love">🥰</option>
-
         </select>
 
         <label>Tipo de recomendación</label>
@@ -150,17 +111,8 @@ function AddItem({setColorTheme}) {
         </select>
 
         <label>Valoración</label>
-        <div id="stack">
-          <Rating
-            name="simple-controlled"
-            value={rating}
-            onChange={(event, newValue) => {
-              setRating(newValue);
-            }}
-          />
-        </div>
-      <Button type="submit" variant="outline-success" id= "add-btn">Añadir recomendación</Button>{' '}
-     {/*<button id= "add-btn">Añadir formulario</button>*/}
+        <Rating name="simple-controlled" value={rating} onChange={(event, newValue) => {setRating(newValue)}}/>
+        <Button type="submit" variant="outline-success" id= "add-btn">Añadir recomendación</Button>{' '}
       </form>
 
 
