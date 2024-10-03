@@ -61,9 +61,13 @@ function EditItem() {
         <label>Género</label>
         <input className="input-text" type="text" value={editFormItem.genre} onChange={handleChange} name="genre" placeholder="género"/>
         <label>URL </label>
-        <input className="input-text" type="url" value={editFormItem.URL} onChange={handleChange} name="url" placeholder="URL"/>
+        <input className="input-text" type="url" value={editFormItem.url} onChange={handleChange} name="url" placeholder="URL"/>
         <label>Duración</label>
         <input className="input-text" type="number" value={editFormItem.length} onChange={handleChange} name="length" placeholder="duración"/>
+        <label>URL Youtube </label>
+        <input className="input-text" type="url" value={editFormItem.youtube} onChange={handleChange} name="url" placeholder="URL Youtube"/>
+        <label>Duración</label>
+
         <label>¿Para que estado de ánimo?</label>
         <select onChange={handleChange} value={editFormItem.MoodId} name="mood" id="lang">
           <option value="rage" >😡</option>
