@@ -14,10 +14,6 @@ function Dashboard({setColorTheme}) {
     getData()
   },[])
 
-  useEffect(()=>{
-    console.log(window.screen.width);
-  },[window.screen.width])
-
   const getData = async () => {
     try {
       let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/items`)
