@@ -72,6 +72,7 @@ img {
   z-index: 3;
   -webkit-user-drag: none;
   user-select: none;
+  color: white;
   border: 2px solid var(--secondary-color);
   background-color: var(--background-color);
   padding: 0 1rem;
