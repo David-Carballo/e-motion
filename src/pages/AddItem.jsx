@@ -24,6 +24,7 @@ function AddItem({setColorTheme}) {
   const [rating, setRating]= useState(null)
   const [isFavorite, setIsFavorite] = useState(false)
   const [type, setType] = useState("")
+  const [youtube, setYoutube] = useState("")
 
   const handleTitle = (e) => setTitle(e.target.value)
   const handleYear = (e) => setYear(e.target.value)
@@ -34,6 +35,12 @@ function AddItem({setColorTheme}) {
   const handleRating = (e) => setRating (e.target.value)
   const handleIsFavorite = (e) => setIsFavorite (e.target.value)
   const handleType = (e) => setType (e.target.value)
+  const handleYoutube = (e) => {
+    const parts= (e.target.value).split("v=")[1]
+    const urlYoutube = `https://www.youtube.com/embed/${parts}`
+    console.log(urlYoutube)
+    setYoutube(urlYoutube)
+  }
 
 
   const handleFormSubmit = async (event) => {
@@ -49,7 +56,7 @@ function AddItem({setColorTheme}) {
       rating,
       isFavorite: false,
       type,
-
+      youtube
     }
 
     try {
@@ -78,11 +85,14 @@ function AddItem({setColorTheme}) {
         <label>Género</label>
         <input type= "text" name= "genre" placeholder= "genero" value = {genre} onChange ={handleGenre}/>
 
-        <label>URL </label>
+        <label>Imagen </label>
         <input type= "url" name= "url" placeholder= "url" value = {url} onChange={handleUrl}/>
 
         <label>Duración</label>
         <input type="number" name= "length" placeholder='duración' value={length} onChange={handleLength}/>
+          
+        <label>URL Youtube </label>
+        <input type= "url" name= "youtube" placeholder= "URL Youtube" value = {youtube} onChange={handleYoutube}/>
 
         <label>¿Qué estado de ánimo representa?</label>
         <select onChange={handleMoodId} value={moodId} name="mood" id="lang1">
