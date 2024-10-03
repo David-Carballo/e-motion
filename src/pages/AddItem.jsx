@@ -72,9 +72,11 @@ function AddItem({setColorTheme}) {
   return (
     <div id="add-item">
 
+
+
       <form onSubmit={handleFormSubmit}>
         
-        <h3>Si desea añadir alguna recomendación, rellene el siguiente formulario</h3>
+        <h3>Añadir recomendación</h3>
         
         <label>Título</label>
         <input type="text" name = "titulo" placeholder='título' value ={title} onChange= {handleTitle}/>

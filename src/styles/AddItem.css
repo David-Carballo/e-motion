@@ -2,10 +2,15 @@
 
 #add-item {
   margin: 50px;
+  background-color: rgba(97, 97, 97, 0.479) ;
 }
 
 #add-item h3 {
   text-align: center;
+  text-shadow:
+ 1px 1px 2px black,
+  0 0 1em var(--primary-color),
+  0 0 0.2em var(--primary-color);
 }
 
 #add-item form {
@@ -13,8 +18,16 @@
   padding: 2rem;
   flex-direction: column;
   align-content: space-between;
+  border:1px solid whitesmoke;
+  border-radius: 5px;
+  padding-bottom: 1vh;
 }
 
+#add-item :hover:not(label,h3) {
+  filter: brightness(1);
+  border: 2px solid var(--primary-color);
+  box-shadow: 2px 2px 20px 1px var(--shadow-accent);
+}
 #add-item form input {
   height: 3vh;
   display: flex;
@@ -67,6 +80,7 @@
 @media (min-width: 1024px) {
   #add-item {
     margin: 100px;
+    
   }
 
   #add-item form {

@@ -36,7 +36,7 @@ body {
 
   --shadow: rgba(0,0,0, 0.9);
   --shadow-dark: rgba(0,0,0, 0.6);
-  --shadow-accent: rgba(255, 222, 52, 0.2);
+  --shadow-accent: rgba(255, 221, 52, 0.479);
 }
 
 .red-theme {
