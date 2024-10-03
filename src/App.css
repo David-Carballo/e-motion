@@ -22,9 +22,9 @@ img {
 
 #clip {
   position: fixed;
-  font-size: 5rem;
-  bottom: 0;
-  right: 0;
+  width: 50px;
+  bottom: 5%;
+  right: 3%;
   z-index: 3;
   -webkit-user-drag: none;
   user-select: none;

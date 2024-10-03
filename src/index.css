@@ -106,7 +106,7 @@ body {
 
   --shadow: rgba(0,0,0, 0.9);
   --shadow-dark: rgba(0,0,0, 0.6);
-  --shadow-accent: rgba(73, 0, 59, 0.2);
+  --shadow-accent: rgba(99, 1, 80, 0.5);
 }
 
 a, p, h1, h2, h3, h4, h5 , h6, label{

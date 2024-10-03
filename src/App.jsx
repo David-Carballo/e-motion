@@ -14,6 +14,7 @@ import NotFound from './pages/NotFound'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import axios from 'axios'
+import clipImg from './assets/clip.png'
 
 function App() {
 
@@ -73,7 +74,7 @@ function App() {
 
       </Routes>
       <span id="clip-message" style={showMessage? {opacity: "1", transition: "1s"} : {opacity: "0", transition: "0.5s"}} role="textbox" >{clipMessage}</span>
-      <span id="clip" onClick={handleClick} style={showMessage? {animation: "myAnim 1s ease 0s 1 normal forwards"} : {}}>📎</span>
+      <img src={clipImg} id="clip" onClick={handleClick} style={showMessage? {animation: "myAnim 1s ease 0s 1 normal forwards"} : {}}/>
 
       <Footer />
     </div>
