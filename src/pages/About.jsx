@@ -2,6 +2,8 @@ import '../styles/About.css'
 import React, { useEffect } from 'react'
 import logoGithub from "/src/assets/github-icon.png"
 import logoLinkedin from "/src/assets/linkedin-icon.png"
+import pedroImg from "/src/assets/pedro.jpg"
+import davidImg from "/src/assets/david.jpg"
 
 function About({setColorTheme}) {
 
@@ -17,7 +19,7 @@ function About({setColorTheme}) {
             
             <div id="about-cards">
                 <div className="card-personal">
-                    <img src="" alt="profile image"></img>
+                    <img src={pedroImg} alt="profile image"></img>
                     <h3>Pedro Perez</h3>
                     <h6>Developer</h6>
                     <div className='flex-row gap-2'>
@@ -26,7 +28,7 @@ function About({setColorTheme}) {
                     </div>
                 </div>
                 <div className="card-personal">
-                    <img src="" alt="profile image"></img>
+                    <img src={davidImg} alt="profile image"></img>
                     <h3>David Carballo</h3>
                     <h6>Developer</h6>
                     <div className='flex-row gap-2'>
