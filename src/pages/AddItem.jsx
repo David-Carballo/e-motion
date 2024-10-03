@@ -20,7 +20,7 @@ function AddItem({setColorTheme}) {
   const [genre, setGenre]= useState("")
   const [url, setUrl]= useState("")
   const [length, setLength]= useState(0)
-  const [moodId, setMoodId]= useState(0)
+  const [moodId, setMoodId]= useState("rage")
   const [rating, setRating]= useState(null)
   const [isFavorite, setIsFavorite] = useState(false)
   const [type, setType] = useState("")
@@ -79,25 +79,25 @@ function AddItem({setColorTheme}) {
         <h3>Añadir recomendación</h3>
         
         <label>Título</label>
-        <input type="text" name = "titulo" placeholder='título' value ={title} onChange= {handleTitle}/>
+        <input type="text" name = "titulo" placeholder='título' value ={title} onChange= {handleTitle} required/>
 
         <label>Año</label>
-        <input type= "number" name = "year" placeholder='año' value={year} onChange={handleYear}/>
+        <input type= "number" name = "year" placeholder='año' value={year} onChange={handleYear} required/>
 
         <label>Género</label>
-        <input type= "text" name= "genre" placeholder= "genero" value = {genre} onChange ={handleGenre}/>
+        <input type= "text" name= "genre" placeholder= "genero" value = {genre} onChange ={handleGenre} required/>
 
-        <label>Imagen </label>
-        <input type= "url" name= "url" placeholder= "url" value = {url} onChange={handleUrl}/>
+        <label>Imagen (Solo acepta formato JPG o PNG) </label>
+        <input type= "url" name= "url" placeholder= "url" value = {url} onChange={handleUrl} pattern=".*\.(jpg|png)$" required/>
 
         <label>Duración</label>
-        <input type="number" name= "length" placeholder='duración' value={length} onChange={handleLength}/>
+        <input type="number" name= "length" placeholder='duración' value={length} onChange={handleLength} required/>
           
         <label>URL Youtube </label>
-        <input type= "url" name= "youtube" placeholder= "URL Youtube" value = {youtube} onChange={handleYoutube}/>
+        <input type= "url" name= "youtube" placeholder= "URL Youtube" value = {youtube} onChange={handleYoutube} required/>
 
         <label>¿Qué estado de ánimo representa?</label>
-        <select onChange={handleMoodId} value={moodId} name="mood" id="lang1">
+        <select onChange={handleMoodId} value={moodId} name="mood" id="lang1" required>
             <option value="rage">😡</option>
             <option value="happy">😀</option>
             <option value="sad">😢</option>
@@ -106,14 +106,14 @@ function AddItem({setColorTheme}) {
         </select>
 
         <label>Tipo de recomendación</label>
-        <select onChange={handleType} value={type} name="type" id="lang">
+        <select onChange={handleType} value={type} name="type" id="lang" required>
           <option value="song">Cancion</option>
           <option value="movie">Pelicula</option>
           <option value="book">Libro</option>
         </select>
         {/* onChange={(event, newValue) => {setRating(newValue)}} */}
         <label>Valoración</label>
-        <Rating name="simple-controlled" value={parseInt(rating)} onChange={handleRating} />
+        <Rating name="simple-controlled" value={parseInt(rating)} onChange={handleRating} required/>
         <Button type="submit" variant="outline-success" id= "add-btn">Añadir recomendación</Button>{' '}
       </form>
 
