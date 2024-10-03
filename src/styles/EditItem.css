@@ -1,15 +1,13 @@
 /* ? MOBILE */
 
 #edit-item-container {
-  background-size: cover;
-  background-image: url("/src/assets/pruebabackground.jpg");
   padding: 2rem 0;
 }
 
 #edit-item {
   margin-left: 15vw;
-  border: 1px solid rgb(255, 249, 249);
-  background-color: rgba(82, 70, 70, 0.486);
+  border:1px solid whitesmoke;
+  background-color: rgba(97, 97, 97, 0.479) ;
   backdrop-filter: blur(10px);
   border-radius: 10px;
   width: 60vw;
@@ -20,9 +18,19 @@
   padding: 2rem 0;
 }
 
+#edit-item :hover:not(label,h3) {
+  filter: brightness(1);
+  border: 2px solid var(--primary-color);
+  box-shadow: 2px 2px 20px 1px var(--shadow-accent);
+}
 #edit-item label {
   padding-bottom: 1vh;
   padding-top: 1vh;
+  text-align: center;
+}
+
+#edit-item input{
+  text-align: center;
 }
 
 #submit-btn {
