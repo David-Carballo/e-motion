@@ -17,7 +17,7 @@ function Mood({setColorTheme}) {
   //Filter states
   const [filterCategory, setFilterCategory] = useState({movies: false, books: false, songs:false})
   const [searchValue, setSearchValue] = useState("");
-  const [filterDuration, setFilterDuration] = useState(200);
+  const [filterRating, setFilterRating] = useState(0);
 
 
   useEffect(()=>{
@@ -59,12 +59,13 @@ function Mood({setColorTheme}) {
       <div className='filter-container'>
         <div className='filters flex-column'>
           <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
-          <FilterBar filterDuration={filterDuration} setFilterDuration={setFilterDuration} filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>
+          <FilterBar filterRating={filterRating} setFilterRating={setFilterRating} filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>
         </div>
         <div id="grid" className='flex-row'>
           
           {moodData.items
           .filter(item=>item.title.toLowerCase().includes(searchValue.toLowerCase()))
+          .filter(item=>item.rating >= filterRating)
           .filter(item=>{
             if(!filterCategory.books && !filterCategory.songs && !filterCategory.movies) return true;
             if(filterCategory.books && item.type === "book") return true;

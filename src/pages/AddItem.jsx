@@ -32,13 +32,13 @@ function AddItem({setColorTheme}) {
   const handleUrl = (e) => setUrl(e.target.value)
   const handleMoodId = (e) => setMoodId(e.target.value)
   const handleLength = (e) => setLength(e.target.value)
-  const handleRating = (e) => setRating (e.target.value)
+  const handleRating = (e) => setRating (parseInt(e.target.value))
   const handleIsFavorite = (e) => setIsFavorite (e.target.value)
   const handleType = (e) => setType (e.target.value)
   const handleYoutube = (e) => {
     const parts= (e.target.value).split("v=")[1]
     const urlYoutube = `https://www.youtube.com/embed/${parts}`
-    console.log(urlYoutube)
+    // console.log(urlYoutube)
     setYoutube(urlYoutube)
   }
 
@@ -109,9 +109,9 @@ function AddItem({setColorTheme}) {
           <option value="movie">Pelicula</option>
           <option value="book">Libro</option>
         </select>
-
+        {/* onChange={(event, newValue) => {setRating(newValue)}} */}
         <label>Valoración</label>
-        <Rating name="simple-controlled" value={rating} onChange={(event, newValue) => {setRating(newValue)}}/>
+        <Rating name="simple-controlled" value={parseInt(rating)} onChange={handleRating} />
         <Button type="submit" variant="outline-success" id= "add-btn">Añadir recomendación</Button>{' '}
       </form>
 

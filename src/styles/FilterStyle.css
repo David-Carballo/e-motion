@@ -14,6 +14,23 @@
     gap: 2rem;
 }
 
+#filter-bar, #search-bar{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+#filter-bar>div label:first-child{
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+}
+
+#search-bar label{
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+}
+
 .filter-category{
     display: flex;
     flex-direction: row;
@@ -58,6 +75,7 @@
     #filter-bar{
         display: flex;
         flex-direction: column;
+        gap: 4rem;
         width: 100%;
     }
 

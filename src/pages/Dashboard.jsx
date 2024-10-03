@@ -57,33 +57,33 @@ function Dashboard({setColorTheme}) {
         <Carousel autoplay slidesToShow={window.innerWidth < 480? 1 : window.innerWidth < 1024? 2 : 3 } className='flex-row'>
           <div>
             <Link to={`/items/${items[index1].id}`}>
-              <img src={items[index1].URL} alt={items.type} />
+              <img src={items[index1].url} alt={items.type} />
             </Link>
           </div>
           <div>
             <Link to={`/items/${items[index2].id}`}>
-              <img src={items[index2].URL} alt={items.type} />
+              <img src={items[index2].url} alt={items.type} />
             </Link>
           </div>
 
           <div>
             <Link to={`/items/${items[index3].id}`}>
-              <img src={items[index3].URL} alt={items.type} />
+              <img src={items[index3].url} alt={items.type} />
             </Link>
           </div>
           <div>
             <Link to={`/items/${items[index4].id}`}>
-              <img src={items[index4].URL} alt={items.type} />
+              <img src={items[index4].url} alt={items.type} />
             </Link>
           </div>
           <div>
             <Link to={`/items/${items[index5].id}`}>
-              <img src={items[index5].URL} alt={items.type} />
+              <img src={items[index5].url} alt={items.type} />
             </Link>
           </div>
           <div>
             <Link to={`/items/${items[index6].id}`}>
-              <img src={items[index6].URL} alt={items.type} />
+              <img src={items[index6].url} alt={items.type} />
             </Link>
           </div>
         </Carousel>
@@ -93,32 +93,32 @@ function Dashboard({setColorTheme}) {
         <Carousel autoplay slidesToShow={window.innerWidth < 480? 1 : window.innerWidth < 1024? 2 : 3 } className='flex-row'> 
           <div>
             <Link to={`/items/${items[items.length-1].id}`}>
-              <img src={items[items.length-1].URL} alt={items.type} />
+              <img src={items[items.length-1].url} alt={items.type} />
             </Link>
           </div>
           <div>
             <Link to={`/items/${items[items.length-2].id}`}>
-              <img src={items[items.length-2].URL} alt={items.type} />
+              <img src={items[items.length-2].url} alt={items.type} />
             </Link>
           </div>
           <div>
             <Link to={`/items/${items[items.length-3].id}`}>
-              <img src={items[items.length-3].URL} alt={items.type} />
+              <img src={items[items.length-3].url} alt={items.type} />
             </Link>
           </div>
           <div>
             <Link to={`/items/${items[items.length-4].id}`}>
-              <img src={items[items.length-4].URL} alt={items.type} />
+              <img src={items[items.length-4].url} alt={items.type} />
             </Link>
           </div>
           <div>
             <Link to={`/items/${items[items.length-5].id}`}>
-              <img src={items[items.length-5].URL} alt={items.type} />
+              <img src={items[items.length-5].url} alt={items.type} />
             </Link>
           </div>
           <div>
             <Link to={`/items/${items[items.length-6].id}`}>
-              <img src={items[items.length-6].URL} alt={items.type} />
+              <img src={items[items.length-6].url} alt={items.type} />
             </Link>
           </div>
           

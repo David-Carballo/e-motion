@@ -13,6 +13,7 @@ function Favorites({setColorTheme}) {
   //Filter states
   const [filterCategory, setFilterCategory] = useState({movies: false, books: false, songs:false})
   const [searchValue, setSearchValue] = useState("");
+  const [filterRating, setFilterRating] = useState(0);
 
   useEffect(()=>{
     setColorTheme("dark");
@@ -51,12 +52,13 @@ function Favorites({setColorTheme}) {
       <div className='filter-container'>
         <div className='filters flex-column'>
           <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
-          <FilterBar filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>
+          <FilterBar filterRating={filterRating} setFilterRating={setFilterRating} filterCategory={filterCategory} setFilterCategory={setFilterCategory}/>
         </div>
         <div id="grid" className='flex-row'>
           
           {favoritesData
           .filter(item=>item.title.toLowerCase().includes(searchValue.toLowerCase()))
+          .filter(item=>item.rating >= filterRating)
           .filter(item=>{
             if(!filterCategory.books && !filterCategory.songs && !filterCategory.movies) return true;
             if(filterCategory.books && item.type === "book") return true;
