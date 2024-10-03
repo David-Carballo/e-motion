@@ -35,6 +35,8 @@ function Dashboard({setColorTheme}) {
   let index5 = Math.floor(Math.random() * items.length)
   let index6 = Math.floor(Math.random() * items.length)
 
+  let bestRating = items.sort((a, b) => a.rating - b.rating)
+
   return (
    
     <div id="dashboard" className='flex-column'>
@@ -49,7 +51,7 @@ function Dashboard({setColorTheme}) {
         </div>
       </div>
       <div className="carousel">
-        <h6>Recomendaciones</h6>
+        <h6>Recomendaciones 🎬🎵📖</h6>
         <Carousel autoplay slidesToShow={window.innerWidth < 480? 1 : window.innerWidth < 1024? 2 : 3 } className='flex-row'>
           <div>
             <Link to={`/items/${items[index1].id}`}>
@@ -85,7 +87,7 @@ function Dashboard({setColorTheme}) {
         </Carousel>
       </div>
       <div className="carousel">
-        <h6>Añadidas recientemente</h6>
+        <h6>Añadidas recientemente ✍</h6>
         <Carousel autoplay slidesToShow={window.innerWidth < 480? 1 : window.innerWidth < 1024? 2 : 3 } className='flex-row'> 
           <div>
             <Link to={`/items/${items[items.length-1].id}`}>
@@ -115,6 +117,42 @@ function Dashboard({setColorTheme}) {
           <div>
             <Link to={`/items/${items[items.length-6].id}`}>
               <img src={items[items.length-6].url} alt={items.type} />
+            </Link>
+          </div>
+          
+        </Carousel>
+      </div>
+      <div className="carousel">
+        <h6>Mejor valoradas ⭐⭐⭐⭐⭐</h6>
+        <Carousel autoplay slidesToShow={window.innerWidth < 480? 1 : window.innerWidth < 1024? 2 : 3 } className='flex-row'> 
+          <div>
+            <Link to={`/items/${bestRating[0].id}`}>
+              <img src={bestRating[0].url} alt={items.type} />
+            </Link>
+          </div>
+          <div>
+            <Link to={`/items/${bestRating[1].id}`}>
+              <img src={bestRating[1].url} alt={items.type} />
+            </Link>
+          </div>
+          <div>
+            <Link to={`/items/${bestRating[2].id}`}>
+              <img src={bestRating[2].url} alt={items.type} />
+            </Link>
+          </div>
+          <div>
+            <Link to={`/items/${bestRating[3].id}`}>
+              <img src={bestRating[3].url} alt={items.type} />
+            </Link>
+          </div>
+          <div>
+            <Link to={`/items/${bestRating[4].id}`}>
+              <img src={bestRating[4].url} alt={items.type} />
+            </Link>
+          </div>
+          <div>
+            <Link to={`/items/${bestRating[5].id}`}>
+              <img src={bestRating[5].url}alt={items.type} />
             </Link>
           </div>
           
