@@ -14,6 +14,10 @@ function Dashboard({setColorTheme}) {
     getData()
   },[])
 
+  useEffect(()=>{
+    console.log(window.screen.width);
+  },[window.screen.width])
+
   const getData = async () => {
     try {
       let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/items`)
@@ -50,7 +54,7 @@ function Dashboard({setColorTheme}) {
       </div>
       <div className="carousel">
         <h6>Recomendaciones</h6>
-        <Carousel autoplay slidesToShow={3} className='flex-row'>
+        <Carousel autoplay slidesToShow={window.innerWidth < 480? 1 : window.innerWidth < 1024? 2 : 3 } className='flex-row'>
           <div>
             <Link to={`/items/${items[index1].id}`}>
               <img src={items[index1].URL} alt={items.type} />
@@ -86,7 +90,7 @@ function Dashboard({setColorTheme}) {
       </div>
       <div className="carousel">
         <h6>Añadidas recientemente</h6>
-        <Carousel autoplay slidesToShow={3}>
+        <Carousel autoplay slidesToShow={window.innerWidth < 480? 1 : window.innerWidth < 1024? 2 : 3 } className='flex-row'> 
           <div>
             <Link to={`/items/${items[items.length-1].id}`}>
               <img src={items[items.length-1].URL} alt={items.type} />

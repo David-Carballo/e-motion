@@ -60,7 +60,7 @@ function ItemDetail() {
     }
   };
 
-  if (item === null) return <PacmanLoader color="#eeec0b" className="pacman" />;
+  if (item === null) return <div id="item-detail"><PacmanLoader color="var(--primary-color)" className="pacman" /></div>;
 
   return (
     <div>

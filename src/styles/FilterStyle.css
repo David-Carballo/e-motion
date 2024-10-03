@@ -1,6 +1,12 @@
 /* ? MOBILE */
 
 
+#search-bar{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
 .filters {
     top: 5rem;
     margin-top: 2rem;
@@ -24,12 +30,19 @@
 /* ? TABLET */
 @media (min-width: 480px) {
 
-
 }
 
 
 /* ? PC */
 @media (min-width: 1024px) {
+
+    
+    #search-bar{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
     .filters {
         border-left: 2px solid var(--primary-color);
         padding: 2%;

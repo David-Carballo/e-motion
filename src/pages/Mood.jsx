@@ -33,18 +33,18 @@ function Mood({setColorTheme}) {
   // Crear un skeleton para mostrar loading
   if(!moodData) {
     return  (
-      <div id="mood" className='flex-row'>
-        <Box sx={{ width: 240 }}>
-          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
-          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+      <div id="mood" className='flex-row gap-10'>
+        <Box sx={{ width: "30%" }}>
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={"100%"} height={210} />
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={"100%"} height={210} />
         </Box>
-        <Box sx={{ width: 240 }}>
-          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
-          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+        <Box sx={{ width: "30%" }}>
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={"100%"} height={210} />
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={"100%"} height={210} />
         </Box>
-        <Box sx={{ width: 240 }}>
-          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
-          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={210} height={210} />
+        <Box sx={{ width: "30%" }}>
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={"100%"} height={210} />
+          <Skeleton sx={{ bgcolor: 'var(--shadow-accent)' }} animation="wave" width={"100%"} height={210} />
         </Box>
       </div>
 

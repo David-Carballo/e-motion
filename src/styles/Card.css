@@ -59,7 +59,7 @@
   height: auto;
   top: 5px;
   right: 0;
-  cursor: cell;
+  cursor: auto;
   z-index: 2;
 }
 
