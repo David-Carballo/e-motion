@@ -66,7 +66,7 @@ function ItemDetail() {
     <div>
       <div id="item-detail">
         <div id="item-image">
-          <Image style={{height: "30rem"}} src={item.URL} preview={{
+          <Image style={{height: "30rem"}} src={item.url} preview={{
                 destroyOnClose: true,
                 imageRender: () => (
                   <iframe

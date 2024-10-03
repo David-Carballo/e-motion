@@ -39,6 +39,10 @@
   border-radius: 10px;
 }
 
+.carousel h6 {
+  color: var(--primary-color);
+}
+
 /* ? TABLET */
 @media (min-width: 480px) {
 
