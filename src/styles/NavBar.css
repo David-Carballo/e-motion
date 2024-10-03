@@ -16,9 +16,9 @@
   color: var(--secondary-color);
 }
 
-#navbar > img {
-  width: 1.5rem;
-  height: 1.5rem;
+#basic-button > img {
+  width: 1rem;
+  height: 1rem;
 }
 
 .logo {
@@ -26,9 +26,37 @@
   top: 0;
 }
 
+#basic-button{
+  background-color: var(--background-color)!important;
+  border:1px solid var(--secondary-color) !important;
+  
+
+}
+
+
+
+#basic-menu div{
+  background-color:  var(--background-color)!important;
+  border: 1px solid whitesmoke !important;
+  color:whitesmoke;
+ 
+
+}
+
+#basic-menu ul{
+ 
+  backdrop-filter: blur(20px);
+
+}
+
+#basic-menu a {
+  text-decoration: none !important;
+  
+}
+
 /* ? TABLET */
 @media (min-width: 480px) {
-  #navbar > img {
+  #navbar > button {
     display: none;
   }
 
@@ -73,7 +101,7 @@
     font-size: 1.1rem;
   }
 
-  #navbar > img {
+  #navbar > button {
     display: none;
   }
 
