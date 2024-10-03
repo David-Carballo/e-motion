@@ -81,7 +81,7 @@ img {
 }
 
 #error {
-  border: 1px solid white;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,7 +89,7 @@ img {
 }
 
 #not-found {
-  border: 1px solid white;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
