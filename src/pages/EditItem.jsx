@@ -43,7 +43,10 @@ function EditItem() {
         editFormItem
       );
       setShowAlert(true);
-      navigate(-1)
+      let timer = setTimeout(()=>{
+        navigate(-1);
+        clearTimeout(timer);
+      },2000)
     } 
     catch (error) {
       navigate("/error")
