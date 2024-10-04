@@ -43,6 +43,7 @@ function EditItem() {
         editFormItem
       );
       setShowAlert(true);
+      navigate(-1)
     } 
     catch (error) {
       navigate("/error")
