@@ -6,23 +6,33 @@
 
 ## Description
 
-**NOTE -** Describe your project in one/two lines.
+This project is an interactive web application created with React, designed to offer personalised recommendations of films, music and books based on the user's mood.
+
 #### [Client Repo](https://github.com/David-Carballo/e-motion)
 #### [Server Repo](https://github.com/plperezp/E-Motion_API)
 
 ## Technologies, Libraries & APIs used
 
 **NOTE -** List here all technologies used in the project like HTML, CSS, Javascript, React, axios, Bootstrap, etc.
+- HTML
+- CSS
+- Javascript
+- React
+- Bootstrap
+- axios
+- React spinners
+- Ant Design
+- MUI Library
 
 ## Backlog Functionalities
 
-**NOTE -** List here all functionalities you wish to add to your proyect later or you are currently working on
+- Login users
+- Share to RRSS
+- Add external API
 
 # Client Structure
 
 ## User Stories
-
-**NOTE -**  List here all the actions a user can do in the app. Example:
 
 - **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault 
 - **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
@@ -35,18 +45,16 @@
 
 ## Client Routes
 
-**NOTE -** Use below table to list your frontend routes
-
 ## React Router Routes (React App)
 | Path                      | Page            | Components        | Behavior                                                        |
 | ------------------------- | ----------------| ----------------  |  ------------------------------------------------------------   |
 | `/`                       | Home            |                            | Home page, shows recommendations, latest additions and best rated |
 | `/about`                  | About           |                            | Project description, links to developer's pages    |
-| `/favorites`              | Favorites       | Card, SearchBar, FilterBar | Login form login  |
-| `/add-item`               | Add Item        | EditProfile                | Form to add new item  |
-| `/edit-item/:itemId`      | Edit Item       | AddGame, GameCard          | Form to edit Item details |
+| `/favorites`              | Favorites       | Card, SearchBar, FilterBar | Show items marked as favorites  |
+| `/add-item`               | Add Item        |                            | Form to add new item  |
+| `/edit-item/:itemId`      | Edit Item       |                            | Form to edit Item details |
 | `/items/:itemId`          | Item Detail     |                            | Details of item, navigate to Edit, delete and back Button |
-| `/moods/:moodId`          | Mood            | Card, SearchBar, FilterBar | Shows all games on backlog   |
+| `/moods/:moodId`          | Mood            | Card, SearchBar, FilterBar | Shows all items that represent that mood   |
 | `/error`                  | Error           |                            | Error page, return Home button   |
 | `*`                       | NotFound        |                            | Not Found page, returns Home automatically  |
 
