@@ -2,7 +2,7 @@
 
 ## [See the App!](e-motion-app.netlify.app)
 
-<img src="/src/assets/logo-emotion.png" width="500"></img>
+<img src="/src/assets/logo-emotion.png" width="200"></img>
 
 ## Description
 
