@@ -13,7 +13,7 @@ function Card(props){
         <Link to={`/items/${id}`} id="card">
             <img src={favLogo} className={`${isFavorite ? "img-fav" : "img-nofav"} item-fav`} />
             <img src={url} alt="" />
-            <div className='flex-column'>
+            <div id ="card-desc">
                 <p>{title}</p>
                 <Rating
                     name="read-only"
