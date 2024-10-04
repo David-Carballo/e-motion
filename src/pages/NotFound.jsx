@@ -6,12 +6,13 @@ function NotFound({setColorTheme}) {
   const navigate = useNavigate()
  
 
-  useEffect( () =>{
-    setColorTheme("dark")
-    const setTimeoutId = setTimeout (() =>{
-      navigate("/")
-    },10000) 
-  }, [])
+  // useEffect( () =>{
+  //   setColorTheme("dark")
+  //   const setTimeoutId = setTimeout (() =>{
+  //     navigate("/")
+  //     clearTimeout(setTimeoutId);
+  //   },10000) 
+  // }, [])
   
   return (
     <div id="not-found">
@@ -28,8 +29,6 @@ function NotFound({setColorTheme}) {
       </p>
 
       <p>Trataremos de redirigirte de manera automatica dentro de 10 segundos</p>
-      
-        <button>😊 Return Home</button>
 
     </div>
   )

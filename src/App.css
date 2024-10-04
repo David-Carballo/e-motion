@@ -148,7 +148,17 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: left;
   color: white;
+  margin-bottom: 3%;
+}
+
+#error a{
+  text-decoration: none;
+}
+
+#error li{
+  list-style-type: none;
 }
 
 #not-found {
@@ -157,6 +167,11 @@ img {
   flex-direction: column;
   align-items: center;
   color: white;
+}
+
+#not-found img {
+  width: 50% !important;
+  height: 50% !important;
 }
 
 .pacman {
@@ -193,5 +208,9 @@ iframe {
     display: flex;
     flex-direction: row-reverse;
     margin: 0px 30px 0px 60px;
+  }
+  #not-found img {
+    width: 20% !important;
+    height: 20% !important;
   }
 }
