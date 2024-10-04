@@ -15,7 +15,10 @@ function About({setColorTheme}) {
         <div id="about"  className='flex-column'>
             <h1>About us</h1>
 
-            <p>Descripción del proyecto</p>
+            <p>Este proyecto es una aplicación web interactiva creada con React, diseñada para ofrecer recomendaciones personalizadas de películas,
+                 música y libros en función del estado de ánimo del usuario. Los usuarios pueden crear y editar sus propias recomendaciones, así como explorar 
+                 una selección de contenido multimedia, incluyendo videos. La interfaz es intuitiva y permite una experiencia fluida para descubrir nuevas 
+                 opciones de entretenimiento adaptadas a cada momento emocional.</p>
             
             <div id="about-cards">
                 <div className="card-personal">
