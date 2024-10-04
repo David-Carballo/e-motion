@@ -80,4 +80,4 @@ This project is an interactive web application created with React, designed to o
 
 ### Slides
 
-[Slides Link](www.your-slides-url-here.com)
+[Slides Link](www.your-slides-url-here.com](https://docs.google.com/presentation/d/1qQNol8fllfdOT1e0SSSevsHNn8Da3T2BIPFJ6czS1nI/edit?usp=sharing)
