@@ -1,16 +1,14 @@
-NOTE: to copy this readme structure simply click on `Raw` on the top right of this gist. There you have the content in the basic [Markdown syntax](https://www.markdownguide.org/basic-syntax/) used in readme files. Then paste it on a README.md file in your repository and fill the information. Always do this directly from VS code, not from github. DON'T ADD THIS NOTE TO YOUR README. Also make sure to remove any notes from this template.
+# E-motion
 
-# Project Name
+## [See the App!](e-motion-app.netlify.app)
 
-## [See the App!](www.your-deploy-url-here.com)
-
-![App Logo](your-image-logo-path-or-name)
+![App Logo](/src/assets/logo-emotion.png)
 
 ## Description
 
 **NOTE -** Describe your project in one/two lines.
-#### [Client Repo here](www.your-github-url-here.com)
-#### [Server Repo here](www.your-github-url-here.com)
+#### [Client Repo](https://github.com/David-Carballo/e-motion)
+#### [Server Repo](https://github.com/plperezp/E-Motion_API)
 
 ## Technologies, Libraries & APIs used
 
@@ -40,15 +38,17 @@ NOTE: to copy this readme structure simply click on `Raw` on the top right of th
 **NOTE -** Use below table to list your frontend routes
 
 ## React Router Routes (React App)
-| Path                      | Page            | Components        | Behavior                                                      |
-| ------------------------- | ----------------| ----------------  |  ------------------------------------------------------------  |
-| `/`                       | Home            |                   | Home page                                                     |
-| `/signup`                 | Signup          |                   | Signup form, link to login, navigate to homepage after signup |
-| `/login`                  | Login           |                   | Login form, link to signup, navigate to homepage after login  |
-| `/profile`                | Profile         | EditProfile       | Navigate to homepage after logout, expire session             |
-| `/games/list`             | GameList        | AddGame, GameCard | Shows all films on backlog                                    |
-| `/games/edit`             | GamesEdit       |                   | Shows all games on backlog                                    |
-| `/games/favourites`       | FavouriteList   | GameCard          | Shows all games on backlog                                    |
+| Path                      | Page            | Components        | Behavior                                                        |
+| ------------------------- | ----------------| ----------------  |  ------------------------------------------------------------   |
+| `/`                       | Home            |                            | Home page, shows recommendations, latest additions and best rated |
+| `/about`                  | About           |                            | Project description, links to developer's pages    |
+| `/favorites`              | Favorites       | Card, SearchBar, FilterBar | Login form login  |
+| `/add-item`               | Add Item        | EditProfile                | Form to add new item  |
+| `/edit-item/:itemId`      | Edit Item       | AddGame, GameCard          | Form to edit Item details |
+| `/items/:itemId`          | Item Detail     |                            | Details of item, navigate to Edit, delete and back Button |
+| `/moods/:moodId`          | Mood            | Card, SearchBar, FilterBar | Shows all games on backlog   |
+| `/error`                  | Error           |                            | Error page, return Home button   |
+| `*`                       | NotFound        |                            | Not Found page, returns Home automatically  |
 
 ## Other Components
 
@@ -59,21 +59,17 @@ NOTE: to copy this readme structure simply click on `Raw` on the top right of th
 
 ### Collaborators
 
-[Developer 1 name](www.github-url.com)
+[Pedro Perez](https://github.com/plperezp)
 
-[Developer 2 name](www.github-url.com)
+[David Carballo](https://github.com/David-Carballo)
 
 ### Project
 
-[Repository Link Client](www.your-github-url-here.com)
+[Repository Link Client](https://github.com/David-Carballo/e-motion)
 
-[Repository Link Server](www.your-github-url-here.com)
+[Repository Link Server](https://github.com/plperezp/E-Motion_API)
 
-[Deploy Link](www.your-deploy-url-here.com)
-
-### Trello
-
-[Link to your trello board](www.your-trello-url-here.com)
+[Deploy Link](https://e-motion-app.netlify.app/)
 
 ### Slides
 
