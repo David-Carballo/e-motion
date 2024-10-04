@@ -13,7 +13,6 @@ This project is an interactive web application created with React, designed to o
 
 ## Technologies, Libraries & APIs used
 
-**NOTE -** List here all technologies used in the project like HTML, CSS, Javascript, React, axios, Bootstrap, etc.
 - HTML
 - CSS
 - Javascript
